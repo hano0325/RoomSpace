@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.scroll-left {
+  transition: 0.8s ease-in-out;
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.scroll-right {
+  transition: 0.8s ease-in-out;
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+.scroll-up {
+  transition: 0.8s ease-in-out;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.scroll-left.is-active,
+.scroll-right.is-active,
+.scroll-up.is-active {
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+}
