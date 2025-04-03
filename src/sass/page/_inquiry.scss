@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.inquiry__inner {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 rem(15);
+    max-width: rem(600);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include mq("md") {
+        padding: 0 rem(25);
+        max-width: rem(750);
+    }
+
+}

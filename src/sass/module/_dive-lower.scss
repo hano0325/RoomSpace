@@ -1,0 +1,124 @@
+@use "global" as *;
+
+.dive-lower__inner {
+    position: relative;
+    @include mq("md") {
+        max-width: rem(1130);
+    }
+}
+
+.dive-lower__img-container {
+    position: relative;
+    margin-top: rem(60);
+    @include mq("md") {
+        width: 100%;
+        z-index: -1;
+        margin-top: rem(140);
+    }
+}
+
+.dive-lower__img-main {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    @include mq("md") {
+        margin-right: 0;
+        right: 0;
+        width: 81%;
+    }
+}
+
+.dive-lower__img-main img {
+    aspect-ratio: 281 / 186;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @include mq("md") {
+        aspect-ratio: 880 / 581;
+    }
+}
+
+.dive-lower__img-sub {
+    position: absolute;
+    width: 26%;
+    top: -13%;
+    width: 36.4%;
+    object-fit: cover;
+    @include mq("md") {
+        z-index: 1;
+        left: 0;
+        width: 37%;
+    }
+}
+
+.dive-lower__img-sub img {
+    aspect-ratio: 128 / 194;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @include mq("md") {
+        aspect-ratio: 400 / 608;
+    }
+}
+
+.dive-lower__text-container {
+    display: flex;
+    margin-top: rem(30);
+    width: 100%;
+    @include mq("md") {
+        position: absolute;
+        z-index: -1;
+        margin-top: 0;
+        display: flex;
+        left: 20%;
+        top: 20%;
+        flex-direction: row;
+        gap: rem(41);
+        width: 76%;
+    }
+}
+
+.dive-lower__text-container-title {
+    position: absolute;
+    font-family: $Gotu-font;
+    font-weight: $regular;
+    font-size: rem(40);
+    line-height: 1;
+    color: $white;
+    top: 3%;
+    left: 10%;
+    @include mq("md") {
+        position: static;
+        width: rem(400);
+        flex-shrink: 0;
+        font-size: rem(80);
+        line-height: 1.25;
+        color: $white;
+    }
+}
+
+.dive-lower__container-sub {
+    font-weight: $regular;
+    @include mq("md") {
+        display: flex;
+        flex-direction: column;
+        color: $white;
+    }
+}
+
+.dive-lower__container-subtext {
+    font-weight: $bold;
+    @include mq("md") {
+        display: flex;
+        margin-top: rem(16);
+        width: 95%;
+        font-size: rem(16);
+        color: $white;
+    }
+}
+
+.dive-lower__container-subbutton {
+    text-align: center;
+    margin-top: rem(56);
+}

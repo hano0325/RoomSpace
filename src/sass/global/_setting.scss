@@ -17,9 +17,7 @@ $base-font-family: "Noto Sans JP";
 $base-en-font: "Noto Sans";
 $inter-font: "inter";
 $Noto-Serif-JP: "Noto Serif JP";
-
-
-$second-font-family: "";
+$Gotu-font: "Gotu";
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
@@ -36,5 +34,24 @@ $bold: 700;
 // 色の指定
 ////////////////////
 
-//色指定（共通性のあるものは出来る限り指定すると良い）
+// === Base Colors ===
+$white: #FFFFFF;
+$off-white: #F6F4F0;
+$ivory: #F8F7F4;
+$beige: #F1ECD9;
 
+// === Gold / Beige Tones ===
+$gold: #CFAE70;
+$gold-muted: #C8B269;
+$gold-dark: #c4bda9;
+$gold-light: #F0E6D3;
+$sand: #E5D2B0;
+$camel: #D5B881;
+$khaki: #A8946F;
+
+// === Brown / Dark Tones ===
+$dark-brown: #2B230A;
+$deep-brown: #2D2509;
+
+// === Accent Colors ===
+$accent-red: #C86969;

@@ -1,0 +1,121 @@
+@use "global" as *;
+
+.button {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: rem(202);
+    color: $white;
+    font-size: rem(14);
+    padding: rem(14) rem(30);
+    line-height: 1.57142;
+    font-weight: $regular;
+    font-family: $Noto-Serif-JP;
+    background-color: $gold;
+    border: solid 1px $gold;
+    cursor: pointer;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    text-align: right;
+    background-color: $white;
+    border: solid 1px $gold;
+    bottom: -4px;
+    left: 4px;
+    right: -4px;
+    top: 4px;
+    z-index: -1;
+}
+
+.button::after {
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    transform: scale(0, 1);
+    transform-origin:left top;
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+    z-index: 1;
+}
+
+.button:hover::after {
+    transform-origin:left top;
+    transform: scale(1, 1);
+  }
+
+
+.button:hover p{
+    position: relative;
+    color: $gold;
+    z-index: 2;
+}
+
+.button:hover img {
+    position: relative;
+    z-index: 2;
+    content: url(../images/common/Vector-gord.png);
+    width: rem(40);
+    margin-left: rem(8);
+    padding-bottom: rem(5);
+}
+
+
+
+.button__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__container-form {
+    position: relative;
+}
+
+.button__container img {
+    width: rem(40);
+    margin-left: rem(8);
+    padding-bottom: rem(5);
+}
+
+
+
+
+.button--transparent::before {
+    @include mq("md") {
+        background-color: transparent;
+    }
+}
+
+.button--white {
+    z-index: 1;
+    color: $gold;
+    background-color: $white;
+    border: solid 1px $white;
+}
+
+.button--white::before {
+    content: "";
+    position: absolute;
+    text-align: right;
+    background-color: transparent;
+    border: solid 1px $white;
+    z-index: -1;
+}
+
+.button--white::after {
+    background-color: $gold;
+}
+
+
+.button--white:hover p{
+    color: $white;
+}
+
+.button--white:hover img {
+    content: url(../images/common/Vector.png);
+}

@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.drawer__inner {
+    position: fixed;
+    padding-right: rem(15);
+    padding-left: rem(15);
+    display: flex;
+    justify-content: space-between;
+    height: rem(80);
+    width: 100%;
+    background-color: $khaki;
+    z-index: 5000;
+}
+
+.drawer__logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    z-index: 100;
+    overflow: hidden;
+}
+
+
+.drawer__logo img{
+    max-width: rem(144);
+    @include mq("md") {
+        max-width: rem(133);
+    }
+}
+
+.drawer__logo a {
+    padding-top: rem(25);
+    padding-bottom: rem(21);
+}
+
+.drawer__menu {
+    padding-top: rem(70);
+}

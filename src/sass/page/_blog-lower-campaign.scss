@@ -1,0 +1,102 @@
+@use "global" as *;
+
+.blog-lower-campaign__contents{
+    margin-top: rem(24);
+}
+
+.blog-lower-campaign__contents-content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+}
+
+.blog-lower-campaign__container {
+    background-color: $white;
+}
+
+
+.blog-lower-campaign__container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: rem(16);
+    padding-right: rem(24);
+    padding-left: rem(24);
+    padding-bottom: rem(24);
+    height: auto;
+}
+
+.blog-lower-campaign__content-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    background-color: $white;
+    box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, .25);
+    transition: 0.3s;
+}
+
+.blog-lower-campaign__content-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.blog-lower-campaign__img img {
+    min-height: auto;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 294 / 188;
+    object-fit: cover;
+}
+
+
+.blog-lower-campaign__text-box-title {
+    font-family: $base-font-family;
+    font-weight: $medium;
+    color: $deep-brown;
+    font-size: rem(16);
+    line-height: 1.5;
+    border-bottom: 1px solid $gold;
+    padding-bottom: rem(8);
+    text-align: center;
+}
+.blog-lower-campaign__money {
+    margin-top: rem(8);
+    text-align: center;
+}
+
+.blog-lower-campaign__money-title {
+    color:$deep-brown;
+    font-family: $base-font-family;
+    font-weight: $regular;
+    font-size: rem(14);
+    line-height: 1.7142;
+}
+
+.blog-lower-campaign__fee {
+    display: flex;
+    margin-top: rem(8);
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-lower-campaign__discount {
+    font-size: rem(20);
+    text-decoration: line-through;
+    text-decoration-color: $accent-red;
+    color: $gold-muted;
+    margin-right: rem(16);
+    padding-top: rem(11);
+    font-family: $base-en-font;
+    font-weight: $bold;
+    line-height: 1;
+}
+
+.blog-lower-campaign__main {
+    font-size: rem(32);
+    line-height: 1;
+    color: $gold-muted;
+    font-family: $base-en-font;
+    font-weight: $bold;
+    color: $gold;
+}

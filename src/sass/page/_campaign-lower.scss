@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.campaign-lower {
+ position: relative;
+}
+
+.campaign-lower::before {
+    background-image: url(../images/common/fish-blue-left.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content:"";
+    width: rem(120);
+    height: rem(55);
+    position: absolute;
+    z-index: -100;
+    display: inline-block;
+    left: calc(50% - min(48vw, 11rem));
+    top: rem(-24);
+    
+    @include mq("md") {
+        width: rem(301);
+        height: rem(138);
+        position: absolute;
+        z-index: -100;
+        display: inline-block;
+        left: calc(50% - min(48vw, 39rem));
+        top: rem(-72);
+    }
+}
+.campaign-lower__inner {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: rem(600);
+    padding: 0 rem(15);
+    @include mq("md") {
+        max-width: rem(1130);
+        padding: 0 rem(25);
+    }
+}
+
+.campaign-lower__pagenavi{
+    margin-top: rem(75.2);
+    @include mq("md") {
+        margin-top: rem(83.2);
+    }
+}

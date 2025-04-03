@@ -1,0 +1,33 @@
+@use "global" as *;
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: relative;
+  width: rem(48);
+  height: rem(48);
+  border: 1px solid $gold-muted;
+  border-radius: 50%;
+  z-index: 1000;
+  cursor: pointer;
+  @include mq("md") {
+      width: rem(80);
+      height: rem(80);
+  }
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  position: absolute;
+  top: 6%;
+  left: 35%;
+  content: url(../images/common/Vector-mini.svg);
+  margin: auto;
+  text-align: center;
+  @include mq("md") {
+      left: 0;
+      top: 21%;
+      content: url(../images/common/Vector-gord.png);
+      transform: rotate(-90deg);
+  }
+}

@@ -1,0 +1,57 @@
+@use "global" as *;
+
+.voice__inner {
+    position: relative;
+    @include mq("md") {
+        max-width: rem(1130);
+    }
+}
+
+.voice__inner::before {
+    display: none;
+    @include mq("md") {
+        background-image: url(../images/common/fish-blue-left.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content:"";
+        width: rem(301);
+        height: rem(138);
+        position: absolute;
+        z-index: 100;
+        display: inline-block;
+        left: calc(50% - min(48vw, 39rem));
+        top: -19%;
+    }
+}
+
+.voice__inner::after {
+    display: none;
+    @include mq("md") {
+        background-image: url(../images/common/tatu.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content:"";
+        position: absolute;
+        width: rem(71);
+        height: rem(162);
+        z-index: 100;
+        display: inline-block;
+        right: calc(50% - min(48vw, 34rem));
+        top: 85%;
+    }
+}
+
+.voice__cards {
+    margin-top: rem(45);
+    @include mq("md") {
+        margin-top: rem(40);
+    }
+}
+
+.voice__button {
+    margin-top: rem(40);
+    text-align: center;
+    @include mq("md") {
+        margin-top: rem(80);
+    }
+}

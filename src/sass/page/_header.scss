@@ -1,0 +1,129 @@
+@use "global" as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: rem(80);
+    z-index: 1000;
+    background-color: rgba(13, 41, 54, 0.4
+);
+    width: 100%;
+    @include mq("md") {
+        height: rem(90);
+
+    }
+}
+
+.header__inner {
+    padding-right: rem(15);
+    padding-left: rem(15);
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    @include mq("md") {
+        padding-right: rem(40);
+        padding-left: rem(40);
+    }
+}
+
+.header__logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    z-index: 100;
+    overflow: hidden;
+}
+
+
+.header__logo img{
+    max-width: rem(145);
+    @include mq("md") {
+        max-width: rem(200);
+    }
+}
+
+
+.header__drawer {
+    position: fixed;
+    display: none;
+    padding: 0 0 rem(10) ;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: $khaki;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.header__nav-items {
+    display: none;
+    @include mq("md") {
+        display: flex;
+        height: inherit;
+        gap: rem(40);
+    }
+}
+
+.header__nav-item {
+    @include mq("md") {
+        position: relative;
+        height: inherit;
+    }
+}
+
+.header__nav-link {
+    display: flex;
+    color: $white;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    font-family:  $base-font-family;
+    font-weight: $regular;
+    line-height: 1;
+    font-size: rem(10);
+    white-space: nowrap;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.header__nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background:$white;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: all .3s;
+}
+
+.header__nav-link:hover {
+    color: $white;
+}
+
+.header__nav-link:hover::after {
+    transform: scale(1, 1);
+}
+
+.header__nav-link.header__nav-link--large span{
+    text-transform:uppercase;
+}
+
+.header__nav-link span{
+    margin-bottom: rem(4);
+    text-align: center;
+    text-transform:capitalize;
+    font-size: rem(18);
+    line-height: 1;
+    font-family: $Noto-Serif-JP;
+}
+
+

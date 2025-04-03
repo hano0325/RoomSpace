@@ -1,0 +1,266 @@
+@use "global" as *;
+
+.tab__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
+  column-gap: rem(24);
+  row-gap: rem(12.8);
+  text-align: center;
+  @include mq("md") {
+    display: flex;
+    position: relative;
+    z-index: 100;
+    column-gap: rem(32);
+  }
+}
+
+.tab__button {
+  border: 1px solid $gold-muted;
+  color: $gold;
+  background-color: $white;
+  width: 100%;
+  font-size: rem(14);
+  padding: rem(5.28) rem(12.8);
+  line-height: 1.5714;
+  writing-mode: horizontal-tb;
+  transition: all 0.3s;
+  cursor: pointer;
+  @include mq("md") {
+    width: 15%;
+  }
+}
+
+.tab__button:hover {
+  background-color: $gold-muted;
+  color: $white;
+}
+
+.tab__button.is-active {
+  background-color: $gold-muted;
+  color: $white;
+}
+
+.tab__campaign-contents {
+  margin-top: rem(45);
+  @include mq("md") {
+    margin-top: rem(35.2);
+  }
+}
+
+.tab__campaign-contents-content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: rem(52);
+  background-color: $white;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 80%;
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(40);
+    row-gap: rem(80);
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.tab__campaign-container {
+  background-color: $white;
+}
+
+.tab__campaign-container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: rem(16);
+  padding-right: rem(16);
+  padding-left: rem(16);
+  padding-bottom: rem(24);
+  height: auto;
+  @include mq("md") {
+    padding-top: rem(24);
+    padding-right: rem(24);
+    padding-left: rem(24);
+    padding-bottom: rem(40);
+  }
+}
+
+.tab__campaign-content {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+
+.tab__campaign-card {
+  display: block;
+  background-color: $white;
+  box-shadow: rem(4) rem(4) rem(10) rgba(0, 0, 0, 0.25);
+}
+
+.tab__campaign-img img {
+  min-height: auto;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 296 / 188;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 333 / 223;
+  }
+}
+
+.tab__campaign-button-container {
+  @include mq("md") {
+    position: absolute;
+    right: 15%;
+    top: 4%;
+    width: rem(240);
+  }
+}
+
+.tab__campaign-money {
+  margin-top: rem(8);
+}
+
+.tab__campaign-text-box-maintitle {
+  display: inline-flex;
+  justify-content: center;
+  font-weight: $regular;
+  font-family: $base-font-family;
+  color: $gold-muted;
+  min-width: rem(120);
+  padding: rem(4) rem(12);
+  font-size: rem(12);
+  line-height: 1.83333;
+  border: 1px solid $gold-muted;
+  @include mq("md") {
+    padding: rem(6) rem(16);
+  }
+}
+
+.tab__campaign-text-box-subtitle {
+  margin-top: rem(4);
+  font-family: $base-font-family;
+  font-weight: $medium;
+  color: $gold-dark;
+  font-size: rem(16);
+  line-height: 1.5;
+  border-bottom: 1px solid $gold-muted;
+  padding-bottom: rem(8);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  @include mq("md") {
+    font-size: rem(24);
+    line-height: 1.458;
+    padding-bottom: rem(4);
+  }
+}
+
+.tab__campaign-money {
+  margin-top: rem(8);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(24);
+    z-index: 10;
+  }
+}
+
+.tab__campaign-money-title {
+  color: $gold-dark;
+  font-family: $base-font-family;
+  font-weight: $regular;
+  font-size: rem(14);
+  line-height: 1.714285;
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+}
+
+.tab__campaign-fee {
+  display: flex;
+  margin-top: rem(9);
+  align-items: center;
+  justify-content: center;
+}
+
+.tab__campaign-discount {
+  font-size: rem(20);
+  text-decoration: line-through;
+  text-decoration-color: $accent-red;
+  color: $gold-dark;
+  margin-right: rem(16);
+  padding-top: rem(11);
+  font-family: $base-en-font;
+  font-weight: $bold;
+  line-height: 1;
+  @include mq("md") {
+    padding-top: rem(16);
+    font-size: rem(24);
+    margin-right: rem(40);
+  }
+}
+
+.tab__campaign-main {
+  font-size: rem(27.2);
+  line-height: 1;
+  font-family: $base-en-font;
+  font-weight: $bold;
+  color: $gold-muted;
+  @include mq("md") {
+    font-size: rem(40);
+  }
+}
+
+.tab__campaign-text-main {
+  @include mq("md") {
+    font-family: $base-font-family;
+    color: $gold-dark;
+    margin-top: rem(24);
+    font-size: rem(16);
+    line-height: 1.5;
+    width: 100%;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    overflow: hidden;
+  }
+}
+
+.tab__campaign-date-container {
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+.tab__campaign-date-time {
+  @include mq("md") {
+    font-family: $base-en-font;
+    font-weight: $bold;
+    color: $gold-muted;
+    font-size: rem(16);
+    line-height: 1.125;
+  }
+}
+
+.tab__campaign-date-text {
+  @include mq("md") {
+    margin-top: rem(7);
+    font-family: $base-font-family;
+    font-weight: $regular;
+    color: $gold-muted;
+    font-size: rem(14);
+    line-height: 1.286;
+  }
+}
+
+.tab__campaign-form-button {
+  @include mq("md") {
+    margin-top: rem(16);
+  }
+}

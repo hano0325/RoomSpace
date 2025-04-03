@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.tab-voice__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    column-gap: rem(32);
+    row-gap: rem(16);
+    @include mq("md") {
+        display: flex;
+        position: relative;
+        z-index: 100;
+        column-gap: rem(32);
+    }
+}
+
+.tab-voice__button button {
+    cursor: pointer;
+}
+
+
+
+.tab-voice__contents {
+    margin-top: rem(40);
+    @include mq("md") {
+        margin-top: rem(45);
+    }
+}
+
+
+.tab-voice__contents-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: rem(40);
+    background-color: $white;
+    margin-right: auto;
+    margin-left: auto;
+    @include mq("md") {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: rem(40);
+        row-gap: rem(80);
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+

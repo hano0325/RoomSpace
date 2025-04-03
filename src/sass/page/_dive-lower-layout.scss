@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.dive-lower-layout {
+    position: relative;
+    margin-top: 0;
+    @include mq("md") {
+        margin-top: rem(100);
+    }
+}
+
+.dive-lower-layout::before {
+    background-image: url(../images/common/fish-blue-left.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content:"";
+    width: rem(120);
+    height: rem(55);
+    position: absolute;
+    z-index: 100;
+    display: inline-block;
+    left: calc(50% - min(48vw, 11rem));
+    top: 5.8%;
+    @include mq("md") {
+        width: rem(301);
+        height: rem(138);
+        position: absolute;
+        z-index: -100;
+        display: inline-block;
+        left: calc(50% - min(48vw, 39rem));
+        top: -2.5%;
+    }
+}
+
+.dive-lower-layout::after {
+    display: none;
+    @include mq("md") {
+        position: absolute;
+        background-image: url(../images/common/fish-right.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content:"";
+        z-index: -100;
+        display: inline-block;
+        width: rem(301);
+        height: rem(138);
+        right: calc(50% - min(48vw, 41rem));
+        top: 108%;
+    }
+}

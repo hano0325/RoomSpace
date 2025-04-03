@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.dive-layout {
+    position: relative;
+    margin-top: rem(60);
+        @include mq("md") {
+            margin-top: rem(171);
+        }
+}
+
+.dive-layout::after {
+    display: none;
+    @include mq("md") {
+        position: absolute;
+        background-image: url(../images/common/sango.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content:"";
+        width: rem(200);
+        height: rem(200);
+        z-index: 100;
+        display: inline-block;
+        right: calc(50% - min(48vw, 40rem));
+        top: 88%;
+    }
+}

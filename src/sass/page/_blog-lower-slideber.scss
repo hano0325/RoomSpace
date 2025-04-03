@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.blog-lower-slideber__inner {
+    max-width: 86.6%;
+    flex-grow: 1;
+    margin-right: auto;
+    margin-left: auto;
+    @include mq("md") {
+    max-width: none;
+    padding: 0;
+    }
+}
+
+.blog-lower-slideber__article-cards {
+    margin-top: rem(24);
+}
+
+.blog-lower-slideber__container {
+    @include mq("md") {
+        display: flex;
+        flex-direction: column;
+    }
+}

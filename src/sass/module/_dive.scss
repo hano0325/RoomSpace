@@ -1,0 +1,139 @@
+@use "global" as *;
+
+.dive__inner {
+    position: relative;
+    @include mq("md") {
+        max-width: rem(1130);
+    }
+}
+
+.dive__img-container {
+    position: relative;
+    margin-top: rem(60);
+    @include mq("md") {
+        width: 100%;
+        z-index: 1;
+        margin-top: rem(140);
+    }
+}
+
+.dive__img-main {
+    position: relative;
+    margin-left: auto;
+    width: 81.5%;
+    @include mq("md") {
+        right: 0;
+        width: 81%;
+    }
+}
+
+.dive__img-main img {
+    aspect-ratio: 281 / 186;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @include mq("md") {
+        aspect-ratio: 880 / 581;
+    }
+}
+
+.dive__img-sub {
+    position: absolute;
+    width: 26%;
+    top: -13%;
+    width: 36.4%;
+    object-fit: cover;
+    @include mq("md") {
+        z-index: 1;
+        left: 0;
+        width: 37%;
+    }
+}
+
+.dive__img-sub img {
+    aspect-ratio: 128 / 194;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @include mq("md") {
+        aspect-ratio: 400 / 608;
+    }
+}
+
+.dive__text-container {
+    margin-top: rem(30);
+    z-index: 100;
+    width: 100%;
+    @include mq("md") {
+        margin-top: rem(50);
+        display: flex;
+        left: 20%;
+        position: absolute;
+        top: 31%;
+        gap: rem(15);
+        width: 76%;
+    }
+}
+.dive__text-container {
+    margin-top: rem(30);
+    z-index: 100;
+    width: 100%;
+    @include mq("md") {
+        margin-top: rem(50);
+        display: flex;
+        left: 20%;
+        position: absolute;
+        top: 31%;
+        gap: rem(15);
+        width: 76%;
+    }
+}
+
+.dive__text-container--lower {
+    @include mq("md") {
+        top: 11%;
+    }
+}
+
+.dive__text-container-title {
+    font-family: $Gotu-font;
+    font-weight: $regular;
+    font-size: rem(40);
+    line-height: 1;
+    color: $gold;
+    @include mq("md") {
+        width: rem(400);
+        flex-shrink: 0;
+        font-size: rem(80);
+        padding-top: rem(10);
+        line-height: 1.25;
+        color: $white;
+    }
+}
+
+.dive__container-sub {
+    font-weight: $regular;
+    @include mq("md") {
+        display: flex;
+        flex-direction: column;
+        color: $white;
+    }
+}
+
+.dive__container-subtext {
+    font-weight: $regular;
+    font-family: $base-font-family;
+    font-size: rem(16);
+    line-height: 1.5;
+    margin-top: rem(16);
+    @include mq("md") {
+        display: flex;
+        width: 90%;
+        color: $white;
+    }
+}
+
+.dive__container-subbutton {
+    text-align: center;
+    margin-top: rem(56);
+}

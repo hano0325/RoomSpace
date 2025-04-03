@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.site-layout {
+    position: relative;
+        margin-top: rem(52);
+        @include mq("md") {
+            margin-top: rem(112);
+        }
+}
+
+.site-layout::before {
+    background-image: url(../images/common/fish-blue-left.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content:"";
+    width: rem(120);
+    height: rem(55);
+    position: absolute;
+    z-index: -100;
+    display: inline-block;
+    left: calc(50% - min(48vw, 11rem));
+    top: rem(-25);
+    @include mq("md") {
+        display: none;
+    }
+    }

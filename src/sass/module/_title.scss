@@ -1,0 +1,81 @@
+@use "global" as *;
+
+.title {
+    color: $deep-brown;
+    text-align: center;
+}
+
+.title__main::first-letter {
+    color: $gold-muted;
+}
+
+.title__main--white::first-letter {
+    @include mq("md") {
+        color: $white;
+    }
+}
+
+.title__main {
+    font-size: rem(32);
+    line-height: 1.25;
+    font-family: $Gotu-font;
+    font-weight: $regular;
+    display: block;
+    @include mq("md") {
+        font-size: rem(40);
+        line-height: 1;
+    }
+}
+
+.title__main--large {
+    font-size: rem(80);
+    line-height: 1;
+    @include mq("md") {
+    font-size: rem(80);
+    line-height: 1;
+    }
+}
+
+.title__main--large,
+.title__sub--shadow {
+    text-shadow: rem(0) rem(4) rem(4) rgba(0, 0, 0, .25);
+    @include mq("md") {
+        text-shadow: none;
+    }
+}
+
+.title__main--big {
+    font-size: rem(80);
+    line-height: 1;
+    @include mq("md") {
+    font-size: rem(80);
+    line-height: 1;
+    }
+}
+
+.title__main--big,
+.title__sub--small {
+    text-shadow: none;
+}
+
+.title__sub {
+    display: block;
+    font-size: rem(12);
+    margin-top: rem(4);
+    line-height: 1.5;
+    font-family: $base-font-family;
+    font-weight: $regular;
+    text-align: center;
+    color: $gold;
+    @include mq("md") {
+        margin-top: rem(8);
+    }
+}
+
+
+.title__main--white,
+.title__sub--white {
+    @include mq("md") {
+        color: $white;
+    }
+}

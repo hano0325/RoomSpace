@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.error-form {
+    position: relative;
+
+    & .wpcf7-not-valid-tip {
+        display: none;
+    }
+
+    & .error-message {
+        display: none;
+    }
+
+    &:has(.wpcf7-not-valid-tip) {
+        & .error-message {
+            display: block;
+            color: $accent-red;
+            font-size: rem(14);
+            line-height: 1.429;
+            font-family: $base-font-family;
+            font-weight: $regular;
+            position: absolute;
+            width: 61%;
+            left: 52%;
+            top: -3%;
+            text-indent: -1em;
+            transform: translateY(-50%) translateX(-50%);
+            @include mq("md") {
+                left: 58.4%;
+                top: 1.3%;
+            }
+        }
+    }
+}

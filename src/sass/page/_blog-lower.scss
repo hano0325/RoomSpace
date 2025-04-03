@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.blog-lower__inner {
+    padding: 0 rem(21);
+    max-width: rem(600);
+    flex-grow: 1;
+    margin-right: auto;
+    margin-left: auto;
+    @include mq("md") {
+        padding: 0 rem(20);
+        max-width: rem(1140);
+    }
+}
+
+.blog-lower__section {
+    @include mq("md") {
+        display: flex;
+        flex-direction: row;
+        gap: rem(80);
+    }
+}
+
+.blog-lower__container {
+    @include mq("md") {
+        display: flex;
+        flex-direction: column;
+        flex: 57%;
+    }
+}
+
+.blog-lower__pagenavi {
+    margin-top: rem(54);
+    @include mq("md") {
+        margin-top: rem(67.2);
+    }
+}
+
+.blog-lower__detail-pagenavi {
+    margin-top: rem(40);
+    @include mq("md") {
+        margin-top: rem(67.2);
+    }
+}

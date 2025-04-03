@@ -1,0 +1,144 @@
+@use "global" as *;
+
+.price::before {
+    display: none;
+    @include mq("md") {
+        position: absolute;
+        background-image: url(../images/common/fish-price.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content:"";
+        z-index: 100;
+        display: inline-block;
+        left: calc(50% - min(48vw, 38rem));
+        width: calc(437 / 1440 *100%);
+        height: rem(201);
+        top: 76%;
+    }
+}
+
+.price__inner {
+    padding-right: rem(15);
+    padding-left: rem(15);
+    margin-right: auto;
+    margin-left: auto;
+    @include mq("md") {
+        padding-right: rem(25);
+        padding-left: rem(25);
+    }
+}
+
+.price__container {
+    margin-top: rem(24);
+    @include mq("md") {
+        margin-top: rem(35);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        column-gap: rem(93);
+    }
+}
+
+
+.price__content {
+    width: 100%;
+    @include mq("md") {
+        width: rem(492);
+        flex-shrink: 0;
+    }
+}
+
+.price__content img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 345 / 227;
+    object-fit: cover;
+    @include mq("md") {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 746 / 492;
+    }
+}
+
+.price__items {
+    @include mq("md") {
+        width: 44%;
+    }
+}
+
+.price__item {
+    margin-top: rem(40);
+}
+
+.price__item:first-child {
+    @include mq("md") {
+        margin-top: 0;
+    }
+}
+
+.price__item:last-child{
+    @include mq("md") {
+        padding-bottom: rem(90);
+    }
+}
+
+.price__item-title {
+    font-family: $base-font-family;
+    font-weight: $bold;
+    font-size: rem(16);
+    line-height: 1.5;
+    color: $deep-brown;
+    border-bottom: 1px solid $gold;
+}
+
+.price__item-container-sub {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(8);
+    gap: rem(8);
+}
+
+.price__item-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.price__item-event,
+.price__item-price {
+    font-size: rem(14);
+    line-height: 1.714;
+    color: $deep-brown;
+    font-weight: $regular;
+    font-family: $base-font-family;
+    @include mq("md") {
+        font-size: rem(16);
+        line-height: 1.5;
+    }
+}
+
+.price__item-event {
+  white-space: wrap;
+  flex-shrink: 0;
+  text-align: left;
+  width: 74%;
+  @include mq("md") {
+    width: 63%;
+}
+}
+
+.price__item-price {
+    text-align: right;
+}
+
+.price__button {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: rem(50);
+    @include mq("md") {
+        margin-top: rem(100);
+    }
+}

@@ -1,0 +1,179 @@
+@use "global" as *;
+
+.campaign-layout {
+    overflow: hidden;
+    position: relative;
+    margin-top: rem(40);
+    @include mq("md") {
+        margin-top: rem(100);
+    }
+}
+
+.campaign__inner {
+    position: relative;
+}
+
+.campaign__container {
+    position: relative;
+    margin-top: rem(40);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    height: auto;
+}
+
+.campaign__swiper {
+    padding: rem(8);
+}
+
+.campaign__title {
+    position: relative;
+}
+
+
+.campaign__container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: rem(16);
+    height: 100%;
+    @include mq("md") {
+        padding-top: rem(24);
+        padding-right: rem(16);
+        padding-left: rem(16);
+        padding-bottom: rem(40);
+    }
+}
+
+.campaign__slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-shadow: rem(0) rem(4) rem(4) rgba(0, 0, 0, .25);
+    width: rem(296);
+    @include mq("md") {
+        width: rem(333);
+    }
+}
+
+
+.campaign__slide img {
+    min-height: auto;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 296 / 188;
+    object-fit: cover;
+    @include mq("md") {
+        aspect-ratio: 333 / 223;
+    }
+  }
+
+  .campaign__button-container {
+    display: none;
+    @include mq("md") {
+        display: inline-block;
+        position: absolute;
+        right: 15%;
+        top: rem(42);
+        width: rem(240);
+    }
+}
+
+.campaign__button-next,
+.campaign__button-prev {
+    display: none;
+    @include mq("md") {
+        display: flex;
+        position: absolute;
+    }
+}
+
+.campaign__button-next {
+    @include mq("md") {
+        position: absolute;
+        left: 85%;
+        transform: rotate(90deg);
+    }
+}
+
+.campaign__button-prev {
+    @include mq("md") {
+        left: 18%;
+        transform:scale(-1,1) rotate(90deg);
+    }
+}
+
+.campaign__text-box {
+    padding-bottom: rem(8);
+}
+
+.campaign__money {
+    margin-top: rem(8);
+}
+
+.campaign__text-box-subtitle {
+    margin-top: rem(4);
+}
+
+.campaign__money {
+    margin-top: rem(8);
+    text-align: center;
+    color: $gold-muted;
+    font-size: rem(14);
+    line-height: 1.714285;
+    font-family: $base-font-family;
+    font-weight: $regular;
+    @include mq("md") {
+        margin-top: rem(16);
+        font-size: rem(16);
+        line-height: 1.5;
+    }
+}
+
+.campaign__fee {
+    display: flex;
+    margin-top: rem(8);
+    align-items: center;
+    justify-content: center;
+}
+
+.campaign__discount {
+    font-size: rem(20);
+    text-decoration: line-through;
+    text-decoration-color: $accent-red;
+    color: $gold-muted;
+    margin-right: rem(16);
+    padding-top: rem(11);
+    font-family: $Noto-Serif-JP;
+    font-weight: $bold;
+    line-height: 1;
+    @include mq("md") {
+        padding-top: rem(16);
+        font-size: rem(24);
+        margin-right: rem(25);
+    }
+}
+
+.campaign__main {
+    font-size: rem(32);
+    line-height: 1;
+    font-family: $Noto-Serif-JP;
+    font-weight: $bold;
+    color: $gold;
+    @include mq("md") {
+        font-size: rem(40);
+    }
+}
+
+
+
+
+.campaign__button  {
+    margin-top: rem(28);
+    text-align: center;
+    padding-bottom: rem(10);
+    @include mq("md") {
+        margin-top: rem(80);
+        text-align: center;
+    }
+}
+

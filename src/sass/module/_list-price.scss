@@ -1,0 +1,108 @@
+@use "global" as *;
+
+
+.list-price {
+    @include mq("md") {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.list-price:not(:first-child) {
+    margin-top: rem(40);
+    @include mq("md") {
+        margin-top: rem(80);
+    }
+}
+
+.list-price__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: $gold-muted;
+    padding-top: rem(8);
+    padding-bottom: rem(8);
+    gap: rem(8);
+    @include mq("md") {
+        flex-direction: column-reverse;
+        width: 18.6%;
+    }
+}
+
+.list-price__container img {
+    width: rem(24);
+    height: rem(24);
+    @include mq("md") {
+        width: rem(64);
+        height: rem(64);
+    }
+}
+
+.list-price__title {
+    position: relative;
+    background-color: $gold-muted;
+    color: $white;
+    line-height: 1.5;
+    font-size: rem(16);
+    font-weight: $bold;
+    font-family: $base-font-family;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-price__table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.list-price__date,
+.list-price__price {
+    border: 1px solid $gold-muted;
+}
+
+.list-price__date {
+    width: 100%;
+    color: $deep-brown;
+    line-height: 1.5;
+    font-size: rem(16);
+    font-weight: $regular;
+    font-family: $base-font-family;
+    padding-top: rem(6);
+    padding-bottom: rem(6);
+    padding-right: rem(20);
+    padding-left: rem(20);
+    text-align: center;
+    @include mq("md") {
+        width: 73%;
+        min-width: rem(340);
+        padding-right: rem(16);
+        padding-top: rem(18);
+        padding-bottom: rem(18);
+        padding-left: rem(15);
+        text-align: left;
+    }
+}
+
+.list-price__price {
+    color: $deep-brown;
+    line-height: 1.5;
+    font-size: rem(16);
+    font-weight: $regular;
+    font-family: $base-font-family;
+    align-items: center;
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    padding-right: rem(16);
+    padding-left: rem(28);
+    text-align: right;
+    @include mq("md") {
+        padding-top: rem(18);
+        padding-bottom: rem(18);
+        padding-right: rem(16);
+        padding-left: rem(82);
+    }
+}
+
+
+

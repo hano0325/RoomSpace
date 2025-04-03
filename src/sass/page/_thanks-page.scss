@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.thanks-page__inner {
+    padding: 0 rem(15);
+    max-width: rem(600);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include mq("md") {
+        padding: 0 rem(25);
+        max-width: rem(750);
+    }
+
+}
+
+.thanks-page__text {
+    text-align: center;
+}
+
+.thanks-page__text h2,
+.thanks-page__text p {
+    font-size: rem(16);
+    font-family: $base-font-family;
+    font-weight: $regular;
+    color: $deep-brown;
+}
+
+.thanks-page__text h2 {
+    line-height: 1.125;
+    @include mq("md") {
+        width: 100%;
+    }
+}
+
+.thanks-page__text p {
+    width: rem(345);
+    margin-top: rem(40);
+    line-height: 1.375;
+    @include mq("md") {
+        width: 100%;
+    }
+}

@@ -1,0 +1,157 @@
+@use "global" as *;
+
+.pagenavi__inner {
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  padding: 0 rem(15);
+  max-width: rem(600);
+  width: 100%;
+  @include mq(md) {
+    padding: 0 rem(25);
+    max-width: rem(550);
+  }
+}
+
+.pagenavi .wp-pagenavi {
+  display: flex;
+  clear: both;
+  justify-content: center;
+  text-align: center;
+}
+
+.pagenavi .wp-pagenavi .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $base-en-font;
+  position: relative;
+  margin: 0 rem(6);
+  padding: 0 rem(12);
+  height: rem(38);
+  min-width: rem(38);
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: 1.1875;
+  white-space: nowrap;
+  color: $gold-muted;
+  border: 1px solid $gold-muted;
+  background-color: $white;
+  transition: 0.3s;
+}
+
+.pagenavi .wp-pagenavi .page:hover {
+  color: $white;
+  background-color: $gold-muted;
+}
+
+.pagenavi .wp-pagenavi .current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  font-weight: $bold;
+  font-family: $base-en-font;
+  background-color: $gold-muted;
+  border-color: $gold-muted;
+  margin: 0 rem(6);
+  padding: 0 rem(12);
+  height: rem(38);
+  min-width: rem(38);
+  font-size: rem(16);
+  line-height: 1.1875;
+
+}
+
+.pagenavi .wp-pagenavi .page:nth-child(n + 6),
+.pagenavi .wp-pagenavi span:nth-child(n + 6) {
+  display: none;
+  @include mq("md") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.pagenavi .wp-pagenavi .previouspostslink,
+.pagenavi .wp-pagenavi .nextpostslink,
+.pagenavi .wp-pagenavi .previouspostslink-detail,
+.pagenavi .wp-pagenavi .nextpostslink-detail {
+  position: relative;
+  height: rem(38);
+  min-width: rem(38);
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  color: $gold-muted;
+  border: 1px solid $gold-muted;
+  background-color: $white;
+  transition: 0.3s;
+}
+
+.pagenavi .wp-pagenavi .previouspostslink,
+.pagenavi .wp-pagenavi .previouspostslink-detail {
+  margin-right: rem(32);
+}
+
+.pagenavi .wp-pagenavi .nextpostslink,
+.pagenavi .wp-pagenavi .nextpostslink-detail {
+  margin-left: rem(32);
+}
+
+.pagenavi .wp-pagenavi .previouspostslink-detail a,
+.pagenavi .wp-pagenavi .nextpostslink-detail a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagenavi .wp-pagenavi .previouspostslink::after,
+.pagenavi .wp-pagenavi .previouspostslink-detail a::after{
+  content: "";
+  border-right: 1px solid #408f95;
+  border-top: 1px solid #408f95;
+  display: inline-block;
+  top: rem(13);
+  left: rem(17);
+  height: rem(11);
+  width: rem(11);
+  position: absolute;
+  transform: rotate(-136deg);
+}
+
+.pagenavi .wp-pagenavi .nextpostslink::after,
+.pagenavi .wp-pagenavi .nextpostslink-detail a::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: rem(13);
+  right: rem(15);
+  height: rem(11);
+  width: rem(11);
+  border-top: 1px solid $gold-muted;
+  border-right: 1px solid $gold-muted;
+  transform: rotate(45deg);
+  z-index: 10;
+}
+
+.pagenavi .wp-pagenavi .previouspostslink:hover,
+.pagenavi .wp-pagenavi .nextpostslink:hover,
+.pagenavi .wp-pagenavi .previouspostslink-detail a:hover,
+.pagenavi .wp-pagenavi .nextpostslink-detail a:hover {
+  color: $white;
+  background-color: $gold-muted;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.pagenavi .wp-pagenavi .previouspostslink:hover::after,
+.pagenavi .wp-pagenavi .nextpostslink:hover::after,
+.pagenavi .wp-pagenavi .previouspostslink-detail:hover a::after,
+.pagenavi .wp-pagenavi .nextpostslink-detail:hover a::after {
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+}
+

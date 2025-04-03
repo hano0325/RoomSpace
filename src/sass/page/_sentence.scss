@@ -1,0 +1,101 @@
+@use "global" as *;
+
+.sentence__inner {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 rem(15);
+    max-width: rem(600);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include mq("md") {
+        padding: 0 rem(16);
+        max-width: rem(850);
+    }
+
+}
+
+.sentence__title {
+    color: $deep-brown;
+    font-family: $base-font-family;
+    font-size: rem(24);
+    line-height: 1.4583;
+    font-weight: $medium;
+    @include mq("md"){
+        font-size: rem(32);
+        line-height: 1.4375;
+    }
+}
+
+.sentence__items {
+    margin-top: rem(22);
+    color: $deep-brown;
+    font-size: rem(16);
+    line-height: 2;
+    font-weight: $regular;
+    font-family: $base-font-family;
+    @include mq("md") {
+        margin-top: rem(16);
+    }
+}
+
+.sentence__items p {
+    margin-top: rem(20);
+}
+
+
+.sentence__items ol{
+    counter-reset: number;
+    padding-left: rem(20.8);
+    text-indent: rem(-15);
+}
+
+
+.sentence__items ol:first-of-type{
+    margin-top: rem(20);
+    @include mq("md") {
+        margin-top: rem(36);
+    }
+}
+
+.sentence__items ol li::before{
+	content: counter(number) ". ";
+    counter-increment: number;
+}
+
+
+
+.sentence__item {
+    margin-top: rem(20);
+}
+
+.sentence__description-number {
+    padding-left: rem(20.8);
+    text-indent: rem(-15);
+}
+
+.sentence__description:first-of-type {
+    margin-top: rem(20);
+    @include mq(md){
+        margin-top: rem(16);
+    }
+}
+
+
+
+.sentence__description-numbers {
+    counter-reset: number;
+}
+
+.sentence__description-number::before {
+    content: counter(number) ". ";
+    counter-increment: number;
+}
+
+
+.sentence__description-disc::before {
+    content: "• ";
+}
+
+
+

@@ -1,0 +1,17 @@
+@use "global" as *;
+
+input[type="submit"] {
+    width: 100%;
+    height: 100%;
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+    padding-left: rem(54);
+    padding-right: rem(112);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: rem(14);
+    border: none;
+    color: $white;
+    cursor: pointer;
+  }

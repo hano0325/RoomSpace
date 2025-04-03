@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.cycle-button {
+    position: fixed;
+    width: rem(48);
+    height: rem(48);
+    border: 1px solid $white;
+    border-radius: 50%;
+    left: auto;
+    top: auto;
+    right: 2%;
+    bottom: 2%;
+    z-index: 5000;
+    cursor: pointer;
+    @include mq("md") {
+        width: rem(80);
+        height: rem(80);
+    }
+}
+
+.cycle-button::after {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    content:"";
+    margin: auto;
+    text-align: center;
+    @include mq("md") {
+        top: 30%;
+        left: 15%;
+        transform: rotate(-90deg);
+    }
+}
