@@ -15,14 +15,20 @@
 
 .campaign__container {
     position: relative;
+    background-color: $white;
     margin-top: rem(40);
     margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
     width: 100vw;
     height: auto;
 }
 
 .campaign__swiper {
-    padding: rem(8);
+    padding-right: rem(16);
+    padding-bottom: rem(11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .campaign__title {
@@ -36,6 +42,8 @@
     justify-content: space-between;
     padding: rem(16);
     height: 100%;
+    background-color: $white;
+    border: 1px solid $gold;
     @include mq("md") {
         padding-top: rem(24);
         padding-right: rem(16);
@@ -45,13 +53,28 @@
 }
 
 .campaign__slide {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: auto;
-    box-shadow: rem(0) rem(4) rem(4) rgba(0, 0, 0, .25);
     width: rem(296);
+    z-index: 10;
     @include mq("md") {
         width: rem(333);
+    }
+}
+
+.campaign__slide::before {
+    content: "";
+    position: absolute;
+    background-color: $beige;
+    right: rem(-16);
+    bottom: rem(-22);
+    top: rem(10);
+    left: rem(9);
+    z-index: -1;
+    @include mq("md") {
+        left: rem(15);
     }
 }
 
@@ -62,43 +85,42 @@
     width: 100%;
     aspect-ratio: 296 / 188;
     object-fit: cover;
+    border: 1px solid $gold;
     @include mq("md") {
         aspect-ratio: 333 / 223;
     }
   }
 
   .campaign__button-container {
-    display: none;
     @include mq("md") {
-        display: inline-block;
-        position: absolute;
-        right: 15%;
-        top: rem(42);
+        position: relative;
+        right: -65%;
+        top: rem(-710);
         width: rem(240);
     }
 }
 
 .campaign__button-next,
 .campaign__button-prev {
-    display: none;
     @include mq("md") {
         display: flex;
-        position: absolute;
+        position: relative;
     }
 }
 
 .campaign__button-next {
     @include mq("md") {
-        position: absolute;
-        left: 85%;
-        transform: rotate(90deg);
+        top: 41%;
+        left: 91%;
+        transform: rotate(-40deg);
     }
 }
 
 .campaign__button-prev {
     @include mq("md") {
-        left: 18%;
-        transform:scale(-1,1) rotate(90deg);
+        top: 45%;
+        left: 5%;
+        transform:scale(1,1) rotate(133deg);
     }
 }
 
@@ -110,14 +132,20 @@
     margin-top: rem(8);
 }
 
-.campaign__text-box-subtitle {
+.campaign__text-box-plan{
     margin-top: rem(4);
 }
+
+.campaign__text-box-plan,
+.campaign__text-box-content {
+   color: $deep-brown;
+   font-family: $base-font-family;
+}
+
 
 .campaign__money {
     margin-top: rem(8);
     text-align: center;
-    color: $gold-muted;
     font-size: rem(14);
     line-height: 1.714285;
     font-family: $base-font-family;
@@ -129,19 +157,24 @@
     }
 }
 
+.campaign__money-title {
+    color: $deep-brown;
+    font-family: $base-font-family;
+    font-weight: $regular;
+}
+
 .campaign__fee {
     display: flex;
+    gap: rem(57.6);
     margin-top: rem(8);
     align-items: center;
     justify-content: center;
 }
 
 .campaign__discount {
+    position: relative;
     font-size: rem(20);
-    text-decoration: line-through;
-    text-decoration-color: $accent-red;
     color: $gold-muted;
-    margin-right: rem(16);
     padding-top: rem(11);
     font-family: $Noto-Serif-JP;
     font-weight: $bold;
@@ -149,9 +182,35 @@
     @include mq("md") {
         padding-top: rem(16);
         font-size: rem(24);
-        margin-right: rem(25);
     }
 }
+
+.campaign__discount::after {
+    position: absolute;
+    content: url(../images/common/Vector-gord.svg);
+    width: rem(40);
+    right: rem(-48);
+    top: rem(2);
+    @include mq("md") {
+        right: rem(-48);
+        top: rem(8);
+    }
+}
+
+.campaign__discount-line {
+    position: relative;
+}
+
+.campaign__discount-line::after {
+    content: '';
+    transform: rotate(7deg);
+    width: 100%;
+    border-top: 3px solid $accent-red;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
 
 .campaign__main {
     font-size: rem(32);
@@ -164,8 +223,19 @@
     }
 }
 
+.campaign__arrow {
+    width: rem(32);
+    @include mq("md") {
+        width: rem(40);
+    }
+}
 
-
+.campaign__arrow img {
+    display: block;
+    @include mq("md") {
+        width: rem(40);
+    }
+}
 
 .campaign__button  {
     margin-top: rem(28);

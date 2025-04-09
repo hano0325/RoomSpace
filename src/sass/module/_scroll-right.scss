@@ -1,12 +1,12 @@
 @use "global" as *;
 
-.scroll-up {
+.scroll-right {
   transition: 0.9s ease-in-out;
-  transform: translateY(30px);
+  transform: translateX(30px);
   opacity: 0;
 }
 
-.scroll-up.is-active {
+.scroll-right.is-active {
   transform:translateY(0);
   opacity: 1;
 }

@@ -3,31 +3,34 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  position: relative;
-  width: rem(48);
-  height: rem(48);
-  border: 1px solid $gold-muted;
-  border-radius: 50%;
-  z-index: 1000;
-  cursor: pointer;
   @include mq("md") {
-      width: rem(80);
-      height: rem(80);
+    position: absolute;
+    width: rem(80);
+    height: rem(80);
+    border: 1px solid $gold-muted;
+    border-radius: 50%;
+    z-index: 1000;
+    cursor: pointer;
+  }
+}
+
+.swiper-button-next::before,
+.swiper-button-prev::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    width: rem(20);
+    height: rem(20);
+    border-width: rem(1);
+    border-top: 1px solid $gold-muted;
+    border-right: 1px solid $gold-muted;
+    top: 47%;
+    left: 47%;
+    transform: translate(-50%, -50%) rotate(90deg);
   }
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  position: absolute;
-  top: 6%;
-  left: 35%;
-  content: url(../images/common/Vector-mini.svg);
-  margin: auto;
-  text-align: center;
-  @include mq("md") {
-      left: 0;
-      top: 21%;
-      content: url(../images/common/Vector-gord.png);
-      transform: rotate(-90deg);
-  }
+  display: none;
 }

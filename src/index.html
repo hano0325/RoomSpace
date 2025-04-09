@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
@@ -163,57 +164,33 @@
       <div class="mv__slider swiper js-mv-swiper">
         <div class="mv__wrapper swiper-wrapper">
           <div class="mv__slide swiper-slide">
-            <picture>
-              <source
-                srcset="./assets/images/common/mv-1-pc.jpg"
-                media="(min-width: 768px)"
-              />
               <img
-                src="./assets/images/common/mv-1-sp.jpg"
-                alt="海の中に亀がいる写真"
+                src="./assets/images/common/mv-1.jpg"
+                alt=""
               />
-            </picture>
           </div>
           <div class="mv__slide swiper-slide">
-            <picture>
-              <source
-                srcset="./assets/images/common/mv-2-pc.jpg"
-                media="(min-width: 768px)"
-              />
               <img
-                src="./assets/images/common/mv-2-sp.jpg"
-                alt="海の中で亀とダイバー2人がいる写真"
+                src="./assets/images/common/mv-2.jpg"
+                alt=""
               />
-            </picture>
           </div>
           <div class="mv__slide swiper-slide">
-            <picture>
-              <source
-                srcset="./assets/images/common/mv-3-pc.jpg"
-                media="(min-width: 768px)"
-              />
               <img
-                src="./assets/images/common/mv-3-sp.jpg"
-                alt="海と空のが写っている写真"
+                src="./assets/images/common/mv-3.jpg"
+                alt=""
               />
-            </picture>
           </div>
           <div class="mv__slide swiper-slide">
-            <picture>
-              <source
-                srcset="./assets/images/common/mv-4-pc.jpg"
-                media="(min-width: 768px)"
-              />
               <img
-                src="./assets/images/common/mv-4-sp.jpg"
-                alt="海と砂が広がっている写真"
+                src="./assets/images/common/mv-4.jpg"
+                alt=""
               />
-            </picture>
           </div>
         </div>
-        <div class="mv__title">
-          <h1 class="mv__title-main">diving</h1>
-          <p class="mv__title-sub">into the ocean</p>
+        <div class="mv__title scroll-onload">
+          <h1 class="mv__title-main">使いやすい、<br>あなたの場所
+        </h1>
         </div>
       </div>
     </div>
@@ -229,107 +206,84 @@
           <div class="campaign__swiper swiper js-campaign-swiper">
             <div class="campaign__wrapper swiper-wrapper">
               <div class="campaign__slide swiper-slide">
-                <img
-                  src="./assets/images/common/campaign1.jpg"
-                  alt="海の中に複数の魚がいる写真"
-                />
+                <img src="./assets/images/common/room-3.jpg" alt="プレミアムプラン">
                 <div class="campaign__container-text text-container">
                   <div class="campaign__text-box text-box">
-                    <p
-                      class="campaign__text-box-maintitle text-box-maintitle"
-                    >
-                      ライセンス講習
+                    <p class="campaign__text-box-maintitle text-box-maintitle">会議室</p>
+                    <p class="campaign__text-box-plan text-box-plan">
+                      プレミアムプラン
                     </p>
-                    <p class="campaign__text-box-subtitle text-box-subtitle">
-                      ライセンス講習
+                    <p class="campaign__text-box-content text-box-content">
+                      初期費用無料+初月10,000円OFF
                     </p>
                   </div>
                   <div class="campaign__money">
-                    <p class="campaign__money-title">
-                      全部コミコミ(お一人様)
-                    </p>
+                    <p class="campaign__money-title">初月</p>
                     <div class="campaign__fee">
-                      <p class="campaign__discount">¥56,000</p>
-                      <p class="campaign__main">¥46,000</p>
+                      <p class="campaign__discount"><span class="campaign__discount-line">¥35,000</span></p>
+                      <p class="campaign__main">¥25,000</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="campaign__slide swiper-slide">
-                <img
-                  src="./assets/images/common/campaign2.jpg"
-                  alt="青い海に船と山が映っている写真"
-                />
+                <img src="./assets/images/common/room.jpg" alt="ライトプラン">
                 <div class="campaign__container-text text-container">
                   <div class="campaign__text-box text-box">
-                    <p
-                      class="campaign__text-box-maintitle text-box-maintitle"
-                    >
-                      体験ダイビング
+                    <p class="campaign__text-box-maintitle text-box-maintitle">レンタルオフィス</p>
+                    <p class="campaign__text-box-plan text-box-plan">
+                      ライトプラン
                     </p>
-                    <p class="campaign__text-box-subtitle text-box-subtitle">
-                      貸切体験ダイビング
+                    <p class="campaign__text-box-content text-box-content">
+                      無料体験キャンペーン
                     </p>
                   </div>
                   <div class="campaign__money">
-                    <p class="campaign__money-title">
-                      全部コミコミ(お一人様)
-                    </p>
+                    <p class="campaign__money-title">1週間体験</p>
                     <div class="campaign__fee">
-                      <p class="campaign__discount">¥24,000</p>
-                      <p class="campaign__main">¥18,000</p>
+                      <p class="campaign__main">¥0</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="campaign__slide swiper-slide">
-                <img
-                  src="./assets/images/common/campaign3.jpg"
-                  alt="暗い海の中にクラゲが複数匹いる写真"
-                />
+                <img src="./assets/images/common/room-2.jpg" alt="レギュラープラン">
                 <div class="campaign__container-text text-container">
                   <div class="campaign__text-box text-box">
-                    <p
-                      class="campaign__text-box-maintitle text-box-maintitle"
-                    >
-                      体験ダイビング
+                    <p class="campaign__text-box-maintitle text-box-maintitle">コワーキングスペース</p>
+                    <p class="campaign__text-box-plan text-box-plan">
+                      レギュラープラン
                     </p>
-                    <p class="campaign__text-box-subtitle text-box-subtitle">
-                      ナイトダイビング
+                    <p class="campaign__text-box-content text-box-content">
+                      初月半額キャンペーン
                     </p>
                   </div>
                   <div class="campaign__money">
-                    <p class="campaign__money-title">
-                      全部コミコミ(お一人様)
-                    </p>
+                    <p class="campaign__money-title">初月</p>
                     <div class="campaign__fee">
-                      <p class="campaign__discount">¥10,000</p>
-                      <p class="campaign__main">¥8,000</p>
+                      <p class="campaign__discount"><span class="campaign__discount-line">¥20,000</span></p>
+                      <p class="campaign__main">¥10,000</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> 
               <div class="campaign__slide swiper-slide">
-                <img
-                  src="./assets/images/common/campaign4.jpg"
-                  alt="海面上にダイバーが複数人いる写真"
-                />
+                <img src="./assets/images/common/room-3.jpg" alt="プレミアムプラン">
                 <div class="campaign__container-text text-container">
                   <div class="campaign__text-box text-box">
-                    <p
-                      class="campaign__text-box-maintitle text-box-maintitle"
-                    >
-                      ファンダイビング
+                    <p class="campaign__text-box-maintitle text-box-maintitle">会議室</p>
+                    <p class="campaign__text-box-plan text-box-plan">
+                      プレミアムプラン
                     </p>
-                    <p class="campaign__text-box-subtitle text-box-subtitle">
-                      貸切ファンダイビング
+                    <p class="campaign__text-box-content text-box-content">
+                      初期費用無料+初月10,000円OFF
                     </p>
                   </div>
                   <div class="campaign__money">
-                    <p class="campaign__money-title">全部コミコミ(お一人様)</p>
+                    <p class="campaign__money-title">初月</p>
                     <div class="campaign__fee">
-                      <p class="campaign__discount">¥20,000</p>
-                      <p class="campaign__main">¥16,000</p>
+                      <p class="campaign__discount"><span class="campaign__discount-line">¥35,000</span></p>
+                      <p class="campaign__main">¥25,000</p>
                     </div>
                   </div>
                 </div>
@@ -341,11 +295,7 @@
           <a href="campaign.html" class="button">
             <div class="button__container">
               <p>View more</p>
-              <img
-                src="./assets/images/common/Vector.png"
-                alt="矢印"
-                class="button__arrow"
-              />
+              <img src="./assets/images/common/Vector.png" alt="矢印" class="button__arrow" />
             </div>
           </a>
         </div>
@@ -355,85 +305,47 @@
         <div class="campaign__button-prev swiper-button-prev"></div>
       </div>
     </section>
-    <section class="dive dive-layout">
-      <div class="dive__inner inner">
-        <div class="dive__title title">
-          <p class="title__main">About us</p>
-          <h2 class="title__sub">私たちについて</h2>
-        </div>
-        <div class="dive__img-container">
-          <div class="dive__img-main">
-            <img
-              src="./assets/images/common/ocean2.jpg"
-              alt="海の中に黄色い魚が二匹いる写真"
-            />
-          </div>
-          <div class="dive__img-sub">
-            <img src="./assets/images/common/ocean1.jpg" alt="沖縄の屋根" />
+    <section class="about about-layout">
+      <div class="about__inner inner">
+        <div class="scroll-up">
+          <div class="about__title-main title">
+            <p class="title__main">About us</p>
+            <h2 class="title__sub">私たちについて</h2>
           </div>
         </div>
-        <div class="dive__text-container">
-          <div class="dive__text-container-title">
-            Dive into<br />
-            the Ocean
-          </div>
-          <div class="dive__container-sub">
-            <p class="dive__container-subtext">
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入り
-            </p>
-            <div class="dive__container-subbutton">
-              <a href="about.html" class="button button--transparent">
-                <div class="button__container">
-                  <p>View more</p>
-                  <img
-                    src="./assets/images/common/Vector.png"
-                    alt="矢印"
-                    class="button__arrow"
-                  />
+        <div class="scroll-up">
+          <div class="about__container">
+            <div class="about__img colorbox">
+              <img
+                src="./assets/images/common/People.jpg"
+                alt=""
+              />
+            </div>
+            <div class="scroll-up">
+              <div class="about__text-container">
+                <p class="about__title-sub">働きやすさを追求した空間</p>
+                <p class="about__text text">
+                  私たちのコワーキングスペースは、ただの作業場所ではなく、「働く・学ぶ・つながる」をコンセプトにしたコミュニティ空間です。フリーランス、スタートアップ、リモートワーカー、クリエイター、学生など、多様な人々が集い、それぞれの目標に向かって前進できる環境を提供します。
+                </p>
+                <div class="about__button">
+                  <a href="information.html" class="button">
+                    <div class="button__container">
+                      <p>View more</p>
+                      <img
+                        src="./assets/images/common/Vector.png"
+                        alt="矢印"
+                        class="button__arrow"
+                      />
+                    </div>
+                  </a>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="license license-layout">
-      <div class="license__inner inner">
-        <div class="license__title-main title">
-          <p class="title__main">Information</p>
-          <h2 class="title__sub">ダイビング情報</h2>
-        </div>
-        <div class="license__container">
-          <div class="license__img colorbox">
-            <div class="color"></div>
-            <img
-              src="./assets/images/common/license.jpg"
-              alt="海の中に黄色の魚と稚魚がいる写真"
-            />
-          </div>
-          <div class="license__text-container">
-            <p class="license__title-sub">ライセンス講習</p>
-            <p class="license__text text">
-              当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br />
-              正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
-            </p>
-            <div class="license__button">
-              <a href="information.html" class="button">
-                <div class="button__container">
-                  <p>View more</p>
-                  <img
-                    src="./assets/images/common/Vector.png"
-                    alt="矢印"
-                    class="button__arrow"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <section class="blog blog-layout">
       <div class="blog__inner inner">
         <div class="blog__title title">
@@ -516,7 +428,7 @@
           </div>
       </div>
     </section>
-    <section class="voice voice-layout">
+    <section class="voice vo+ice-layout">
       <div class="voice__inner inner">
         <div class="voice__title-main title">
           <p class="title__main">Voice</p>
@@ -583,7 +495,7 @@
             <div class="button__container">
               <p>View more</p>
               <img
-                src="./assets/images/common/Vector.png"
+                src="./assets/images/common/Vector.svg"
                 alt="矢印"
                 class="button__arrow"
               />
@@ -592,7 +504,7 @@
         </div>
       </div>
     </section>
-    <section class="price price-layout">
+  <section class="price price-layout">
       <div class="price__inner inner">
         <div class="price__title-main title">
           <p class="title__main">Price</p>

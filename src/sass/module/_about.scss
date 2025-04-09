@@ -1,13 +1,13 @@
 @use "global" as *;
 
-.license__inner {
+.about__inner {
     @include mq("md") {
         max-width: rem(1200);
     }
 }
 
 
-.license__container {
+.about__container {
     margin-top: rem(35);
     @include mq("md") {
         margin-top: rem(50);
@@ -17,8 +17,7 @@
     }
 }
 
-.license__img {
-    position: relative;
+.about__img {
     width: 100%;
     height: auto;
     @include mq("md") {
@@ -26,7 +25,7 @@
     }
 }
 
-.license__img img{
+.about__img img{
     display: inline-block;
     width: 100%;
     height: auto;
@@ -37,7 +36,7 @@
     }
 }
 
-.license__text-container {
+.about__text-container {
     display: block;
     margin-top: rem(16);
     text-align: left;
@@ -50,8 +49,8 @@
     }
 }
 
-.license__title-sub {
-    font-family: $base-font-family;
+.about__title-sub {
+    font-family: $Noto-Serif-JP;
     font-size: rem(20);
     line-height: 1.2;
     color: $deep-brown;
@@ -65,11 +64,11 @@
     }
 }
 
-.license__text {
+.about__text {
     margin-top: rem(8);
 }
 
-.license__button {
+.about__button {
     margin-top: rem(40);
     text-align: center;
     position: relative;

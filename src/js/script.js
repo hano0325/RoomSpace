@@ -74,45 +74,63 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         }
     });
 
+// キャンペーンセクション用のSwiper
+var campaignSwiper = new Swiper('.js-campaign-swiper', {
+  loop: true, // 無限ループ
+  slidesPerView: 'auto', // 一度に表示するスライド数
+  slidesPerGroup: 1, // 一度に移動するスライド数
+  initialSlide: 1, // 初期表示スライド
+  spaceBetween: 24, // スライド間のスペース
+  autoplay: {
+    delay: 2000, // 2秒ごとに自動でスライド
+    disableOnInteraction: false // ユーザーが操作しても自動再生を止めない
+  },
+  pagination: {
+    el: '.swiper-pagination', // ページネーションの要素
+    clickable: true, // ページネーションをクリック可能にする
+  },
+  navigation: {
+    nextEl: '.swiper-button-next', // 次へボタン
+    prevEl: '.swiper-button-prev', // 前へボタン
+  },
+  breakpoints: {
 
-
-const swiper = new Swiper(".swiper", {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 0,
-    pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next", // 順番に注意
-    prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
+    // タブレットおよびPC用（768px以上）
     768: {
-        slidesPerView: 1.5,
-        centeredSlides: true,
-        spaceBetween: 40,
-},
-    },
-});
-
-// スクロールアニメーション
-$(window).on('load scroll', function () {
-  var triggerMargin = 150;
-
-  // 共通関数：表示エリアに入ったら is-active を付与
-  function activateOnScroll(targetClass) {
-    var elements = document.querySelectorAll(targetClass);
-    for (var i = 0; i < elements.length; i++) {
-      var elem = elements[i];
-      if (window.innerHeight > elem.getBoundingClientRect().top + triggerMargin) {
-        elem.classList.add('is-active');
-      }
+      slidesPerView: 'auto', // 一度に表示するスライド数
+      slidesPerGroup: 1, // 一度に移動するスライド数
+      initialSlide: 1, // 初期表示スライド
+      spaceBetween: 40, // スライド間のスペース
     }
   }
-
-  activateOnScroll('.scroll-up');
-  activateOnScroll('.scroll_left');
-  activateOnScroll('.scroll_right');
 });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const triggerMargin = 150;
+  
+    // 🔹 読み込み時に .scroll-onload のみに is-active を付与
+    const onloadElements = document.querySelectorAll('.scroll-onload');
+    onloadElements.forEach(function (elem) {
+      setTimeout(() => {
+        elem.classList.add('is-active');
+      }, 200); // ふわっと演出用ディレイ（任意）
+    });
+  
+    // 🔸 スクロールで登場する要素
+    const scrollElements = document.querySelectorAll('.scroll-up, .scroll-left, .scroll-right');
+  
+    function activateOnScroll() {
+      scrollElements.forEach(function (elem) {
+        const elemTop = elem.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+  
+        if (windowHeight > elemTop + triggerMargin) {
+          elem.classList.add('is-active');
+        }
+      });
+    }
+  
+    // 初期チェック＆スクロールイベント
+    window.addEventListener('load', activateOnScroll);
+    window.addEventListener('scroll', activateOnScroll);
+  });
