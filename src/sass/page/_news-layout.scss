@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.news-layout {
+    background-color: $off-white;
+    padding-top: rem(85);
+    padding-bottom: rem(90);
+    margin-top: rem(70);
+    @include mq("md") {
+       padding-top: rem(100);
+       margin-top: rem(150);
+    }
+}
