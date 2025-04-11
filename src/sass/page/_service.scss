@@ -44,11 +44,12 @@
 }
 
 .service__item img {
-  width: rem(40);
-  height: rem(40);
+  width: rem(50);
+  height: rem(50);
   display: inline-block;
+  object-fit: contain;
   @include mq("md") {
-    width: rem(70);
+    width: rem(50);
     height: rem(70);
   }
 }

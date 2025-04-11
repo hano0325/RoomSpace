@@ -1,0 +1,104 @@
+@use "global" as *;
+
+.event__inner {
+  width: 100%;
+  padding-right: rem(50);
+  padding-left: rem(50);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: rem(600);
+  @include mq("md") {
+    max-width: rem(1130);
+    padding-right: rem(25);
+    padding-left: rem(25);
+  }
+}
+
+.event__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: rem(32);
+    margin-top: rem(40);
+    @include mq("md") {
+        margin-top: rem(50);
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: rem(30);
+        column-gap: rem(59);
+    }
+}
+
+.event__link {
+    width: 100%;
+    display: block;
+    background-color:  $ivory;
+    padding-top: rem(16);
+    padding-right: rem(16);
+    padding-bottom: rem(22);
+    padding-left: rem(16);
+}
+
+.event__item a {
+  transition: transform 0.3s;
+}
+
+.event__item:hover a {
+  transform: translateY(-10px);
+}
+
+
+.event__link img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 251 / 171;
+  object-fit: cover;
+}
+
+.event__box {
+  margin-top: rem(9);
+}
+
+
+.event__label {
+  display: inline-flex;
+  font-weight: $regular;
+  font-family: $base-font-family;
+  color: $gold-muted;
+  min-width: rem(120);
+  padding: rem(4) rem(12);
+  align-items: center;
+  justify-content: center;
+  font-size: rem(12);
+  line-height: 1.83333;
+  border: 1px solid $gold-muted;
+  @include mq("md") {
+    padding: rem(6.08) rem(16);
+  }
+}
+
+
+.event__text-box {
+  margin-top: rem(11);
+  border-bottom: 1px solid $gold;
+  padding-bottom: rem(7);
+}
+
+.event__date,
+.event__text {
+  font-weight: $regular;
+  font-family: $base-font-family;
+  color: $deep-brown;
+  font-size: rem(12);
+  line-height: 1.5;
+}
+
+.event__text {
+  margin-top: rem(7);
+}
+
+.event__button {
+  margin-top: rem(50);
+  text-align: center;
+  @include mq("md"){
+    margin-top: rem(60);
+  }
+}
