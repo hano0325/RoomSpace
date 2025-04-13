@@ -1,136 +1,228 @@
 @use "global" as *;
 
-.price::before {
-    display: none;
-    @include mq("md") {
-        position: absolute;
-        background-image: url(../images/common/fish-price.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        content:"";
-        z-index: 100;
-        display: inline-block;
-        left: calc(50% - min(48vw, 38rem));
-        width: calc(437 / 1440 *100%);
-        height: rem(201);
-        top: 76%;
-    }
-}
-
 .price__inner {
+    width: 100%;
     padding-right: rem(15);
     padding-left: rem(15);
     margin-right: auto;
     margin-left: auto;
+    max-width: rem(600);
     @include mq("md") {
-        padding-right: rem(25);
-        padding-left: rem(25);
+      max-width: rem(1130);
+      padding-right: rem(25);
+      padding-left: rem(25);
     }
 }
 
-.price__container {
-    margin-top: rem(24);
-    @include mq("md") {
-        margin-top: rem(35);
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        column-gap: rem(93);
+.price__table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(40);
+    margin-top: rem(50);
+    @include mq("md"){
+        flex-direction: row;
+        margin-top: rem(60);
+        gap: rem(0);
     }
 }
 
+.price__plan ul {
+    display: flex;
+    flex-direction: row;
+}
 
 .price__content {
     width: 100%;
-    @include mq("md") {
-        width: rem(492);
-        flex-shrink: 0;
+    text-align: center;
+    margin-top: 0;
+    height: auto;
+    @include mq("md"){
+        table-layout: fixed;
+        margin-top: rem(40);
     }
 }
 
-.price__content img{
-    width: 100%;
-    height: auto;
-    aspect-ratio: 345 / 227;
-    object-fit: cover;
+.price__table table,
+.price__table thead,
+.price__table tr,
+.price__table th,
+.price__table td {
+    border-collapse: collapse;
+    border: 1px solid $gold;
+    color:  $deep-brown;
+}
+
+
+.price__table thead th {
+    padding-top: rem(19);
+    padding-right: rem(60);
+    padding-bottom: rem(15);
+    padding-left: rem(60);
+    @include mq("md") {
+        padding-top: rem(29);
+        padding-right: rem(10);
+        padding-bottom: rem(29);
+        padding-left: rem(10);
+    }
+}
+
+.price__money,
+.price__time,
+.price__answer,
+.price__usage {
+    padding-top: rem(24);
+    padding-right: rem(10);
+    padding-bottom: rem(24);
+    padding-left: rem(10);
+}
+
+.price__money,
+.price__time,
+.price__answer,
+.price__usage {
+    width: 72%;
     @include mq("md") {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        aspect-ratio: 746 / 492;
     }
 }
 
-.price__items {
-    @include mq("md") {
-        width: 44%;
-    }
+
+.price__table td {
+    background-color: $white;
 }
 
-.price__item {
-    margin-top: rem(40);
+
+.price__plan--light {
+    background-color: $gold-light;
 }
 
-.price__item:first-child {
-    @include mq("md") {
-        margin-top: 0;
-    }
+.price__plan--regular {
+    background-color: $sand;
 }
 
-.price__item:last-child{
-    @include mq("md") {
-        padding-bottom: rem(90);
-    }
+.price__plan--premium {
+    background-color: $camel;
 }
 
-.price__item-title {
+.price__plan {
+    width: 30%;
+    font-size: rem(25);
+    line-height: 1.136;
     font-family: $base-font-family;
-    font-weight: $bold;
-    font-size: rem(16);
-    line-height: 1.5;
-    color: $deep-brown;
-    border-bottom: 1px solid $gold;
-}
-
-.price__item-container-sub {
-    display: flex;
-    flex-direction: column;
-    margin-top: rem(8);
-    gap: rem(8);
-}
-
-.price__item-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-shrink: 0;
-}
-
-.price__item-event,
-.price__item-price {
-    font-size: rem(14);
-    line-height: 1.714;
-    color: $deep-brown;
     font-weight: $regular;
-    font-family: $base-font-family;
+    text-align: center;
     @include mq("md") {
-        font-size: rem(16);
-        line-height: 1.5;
+        width: auto;
+        font-size: rem(30);
+        line-height: 1.363;
     }
 }
 
-.price__item-event {
-  white-space: wrap;
-  flex-shrink: 0;
-  text-align: left;
-  width: 74%;
-  @include mq("md") {
-    width: 63%;
-}
+.price__light,
+.price__regular,
+.price__premium,
+.price__side,
+.price__money {
+    font-family: $base-font-family;
+    font-weight: $regular;
+    color: $deep-brown;
 }
 
-.price__item-price {
-    text-align: right;
+.price__side {
+    background-color: $white;
+    font-size: rem(14);
+    line-height: 1.071;
+    padding-top: rem(32);
+    padding-right: rem(10);
+    padding-bottom: rem(36);
+    padding-left: rem(10);
+    @include mq("md") {
+        font-size: rem(27);
+        line-height: 1.227;
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+    }
+}
+
+.price__money {
+    font-size: rem(30);
+    line-height: 0.7;
+    @include mq("md") {
+        font-size: rem(40);
+        line-height: 1.818;
+    }
+}
+
+.price__time {
+    font-size: rem(27);
+    line-height: 1.111;
+    @include mq("md") {
+        font-size: rem(30);
+        line-height: 1.066;
+    }
+}
+
+.price__answer::before {
+    content:"";
+    display: inline-block;
+    width: rem(45);
+    height: rem(45);
+    border: 2px solid $black;
+    border-radius: 50%;
+    @include mq("md") {
+        width: rem(33);
+        height: rem(33);
+    }
+}
+
+.price__usage,
+.price__usage-unit {
+    font-family: $base-font-family;
+    position: relative;
+}
+
+.price__usage {
+    font-size: rem(23);
+    line-height: 1.304;
+    @include mq("md") {
+        font-size: rem(30);
+        line-height: 1.363;
+    }
+}
+
+.price__usage-unit {
+    font-size: rem(20);
+    line-height: 1.5;
+    @include mq("md") {
+        font-size: rem(27);
+        line-height: 1.227;
+    }
+}
+
+.price__line {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(44);
+    border-bottom: 1px solid $black;
+    @include mq("md") {
+        width: rem(66);
+    }
+}
+
+
+
+.price__unit {
+    font-size: rem(20);
+    line-height: 0.9;
+    @include mq("md") {
+        font-size: rem(27);
+        line-height: 1.363;
+    }
 }
 
 .price__button {
@@ -140,5 +232,19 @@
     margin-top: rem(50);
     @include mq("md") {
         margin-top: rem(100);
+    }
+}
+
+.price__table--pc {
+    display: none;
+    @include mq("md") {
+        display: flex;
+    }
+}
+
+.price__table--sp {
+    display: flex;
+    @include mq("md") {
+        display: none;
     }
 }

@@ -64,14 +64,26 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         $("body").removeClass("no-scroll"); // スクロールを無効化
     }
 
-    var topBtn = $(".cycle__button");
-    topBtn.hide();
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 800) {
-        topBtn.fadeIn();
+    // ページトップに戻るボタン
+    $(function () {
+      const pageTop = $(".js-page-top");
+      pageTop.hide();
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+          pageTop.fadeIn();
         } else {
-        topBtn.fadeOut();
+          pageTop.fadeOut();
         }
+      });
+      pageTop.click(function () {
+        $("body, html").animate(
+          {
+            scrollTop: 0,
+          },
+          300
+        );
+        return false;
+      });
     });
 
 // キャンペーンセクション用のSwiper

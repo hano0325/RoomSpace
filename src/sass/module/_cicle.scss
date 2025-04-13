@@ -2,13 +2,13 @@
 
 .cycle-button {
     position: fixed;
-    width: rem(48);
-    height: rem(48);
-    border: 1px solid $white;
+    width: rem(45);
+    height: rem(45);
+    border: 1px solid $gold;
     border-radius: 50%;
     left: auto;
     top: auto;
-    right: 2%;
+    right: 4%;
     bottom: 2%;
     z-index: 5000;
     cursor: pointer;
@@ -18,16 +18,18 @@
     }
 }
 
-.cycle-button::after {
+.cycle-button::before {
     position: absolute;
-    top: 15%;
-    left: 35%;
-    content:"";
-    margin: auto;
-    text-align: center;
+    border-right: 1px solid $gold;
+    border-top: 1px solid $gold;
+    content: "";
+    height: rem(12.8);
+    width: rem(12.8);
+    left: 50%;
+    top: 57%;
+    transform: translate(-50%, -50%) rotate(-45deg);
     @include mq("md") {
-        top: 30%;
-        left: 15%;
-        transform: rotate(-90deg);
+        height: rem(23);
+        width: rem(23);
     }
-}
+  }

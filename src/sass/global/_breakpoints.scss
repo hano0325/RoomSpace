@@ -60,12 +60,7 @@ $mediaquerys: (
     }
   }
 
-  //モバイルのみ表示
-  .u-mobile {
-    @include mq("md") {
-      display: none;
-    }
-  }
+
 } @else {
   //pcで表示
   .u-desktop {
