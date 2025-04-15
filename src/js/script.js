@@ -146,3 +146,57 @@ var campaignSwiper = new Swiper('.js-campaign-swiper', {
     window.addEventListener('load', activateOnScroll);
     window.addEventListener('scroll', activateOnScroll);
   });
+
+    
+  $(document).ready(function () {
+    // 初期状態で全ての答えを閉じる
+    $('.js-faq-question').next().hide();
+  
+    // クリックイベントで開閉＆クラス切り替え
+    $('.js-faq-question').on('click', function () {
+      $(this).next().slideToggle(300); // 0.3秒でスライド
+      $(this).toggleClass('is-active');
+    });
+  });
+
+
+  // ローディングとMVアニメーション
+  window.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    const mv = document.querySelector('#mv');
+    const title = document.querySelector('.mv__title-main');
+    const spans = document.querySelectorAll('.mv__title-main span');
+  
+    // チラ見え防止：最初にすぐ空にする
+    spans.forEach(span => {
+      span.dataset.text = span.textContent;
+      span.textContent = '';
+    });
+  
+    // ヘッダーとMVを表示
+    header.classList.add('show');
+    mv.classList.add('show');
+  
+    // タイトル全体をフェードイン
+    title.classList.add('is-visible');
+  
+    // 少し遅らせて文字アニメーション
+    setTimeout(() => {
+      spans.forEach((lineSpan, lineIndex) => {
+        const text = lineSpan.dataset.text;
+  
+        text.split('').forEach((char, i) => {
+          const charSpan = document.createElement('span');
+          charSpan.textContent = char;
+          charSpan.style.display = 'inline-block';
+          lineSpan.appendChild(charSpan);
+  
+          setTimeout(() => {
+            charSpan.classList.add('is-active');
+          }, (i + lineIndex * 8) * 50);
+        });
+      });
+    }, 400);
+  });
+  
+

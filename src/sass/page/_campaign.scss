@@ -140,20 +140,16 @@
 .campaign__text-box-content {
    color: $deep-brown;
    font-family: $base-font-family;
+   font-weight: $medium;
 }
 
 
 .campaign__money {
     margin-top: rem(8);
     text-align: center;
-    font-size: rem(14);
-    line-height: 1.714285;
-    font-family: $base-font-family;
     font-weight: $regular;
     @include mq("md") {
         margin-top: rem(16);
-        font-size: rem(16);
-        line-height: 1.5;
     }
 }
 
@@ -214,12 +210,22 @@
 
 .campaign__main {
     font-size: rem(32);
-    line-height: 1;
+    line-height: 1.25;
     font-family: $Noto-Serif-JP;
     font-weight: $bold;
     color: $gold;
     @include mq("md") {
         font-size: rem(40);
+        line-height: 1;
+    }
+}
+
+.campaign__main-yen {
+    font-size: rem(27);
+    line-height: 1.481;
+    @include mq("md") {
+        font-size: rem(30);
+        line-height: 1.333;
     }
 }
 

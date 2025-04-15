@@ -68,7 +68,7 @@
   align-items: center;
   justify-content: center;
   font-size: rem(12);
-  line-height: 1.83333;
+  line-height: 1.5;
   border: 1px solid $gold-muted;
   @include mq("md") {
     padding: rem(6.08) rem(16);

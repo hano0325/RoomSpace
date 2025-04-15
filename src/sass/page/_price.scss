@@ -109,7 +109,7 @@
 .price__plan {
     width: 30%;
     font-size: rem(25);
-    line-height: 1.136;
+    line-height: 0.88;
     font-family: $base-font-family;
     font-weight: $regular;
     text-align: center;
@@ -140,7 +140,7 @@
     padding-left: rem(10);
     @include mq("md") {
         font-size: rem(27);
-        line-height: 1.227;
+        line-height: 0.814;
         padding-top: rem(50);
         padding-bottom: rem(50);
     }
@@ -151,7 +151,7 @@
     line-height: 0.7;
     @include mq("md") {
         font-size: rem(40);
-        line-height: 1.818;
+        line-height: 0.55;
     }
 }
 
@@ -188,16 +188,16 @@
     line-height: 1.304;
     @include mq("md") {
         font-size: rem(30);
-        line-height: 1.363;
+        line-height: 0.733;
     }
 }
 
 .price__usage-unit {
     font-size: rem(20);
-    line-height: 1.5;
+    line-height: 0.909;
     @include mq("md") {
         font-size: rem(27);
-        line-height: 1.227;
+        line-height: 0.815;
     }
 }
 
@@ -218,7 +218,7 @@
 
 .price__unit {
     font-size: rem(20);
-    line-height: 0.9;
+    line-height: 1.222;
     @include mq("md") {
         font-size: rem(27);
         line-height: 1.363;

@@ -1,5 +1,12 @@
 @use "global" as *;
 
+.faq-list {
+  margin-top: rem(60);
+  @include mq("md") {
+    margin-top: rem(100);
+  }
+}
+
 .faq-list__item:not(:first-child) {
   margin-top: rem(40);
 }
@@ -12,7 +19,8 @@
   padding-right: rem(48);
   padding-bottom: rem(16);
   padding-left: rem(16);
-  line-height: 1.4375;
+  font-size: rem(11);
+  line-height: 1.181;
   cursor: pointer;
   font-weight: $regular;
   font-family: $base-font-family;
@@ -23,7 +31,7 @@
     padding-bottom: rem(25);
     padding-left: rem(40);
     font-size: rem(20);
-    line-height: 1.45;
+    line-height: 1.2;
   }
 }
 
@@ -32,34 +40,54 @@
   content: "";
   position: absolute;
   display: inline-block;
-  top: 45%;
-  right: 4%;
-  width: rem(32);
+  top: 30%;
+  right: 5%;
+  width: rem(15);
   height: rem(1);
-  background: $white;
-  transition: all 0.2s;
+  background-color: $white;
+  transition: all 0.3s;
   @include mq(md) {
+    width: rem(32);
     top: 49%;
     right: 4%;
   }
 }
 
 .faq-list__item-question::before {
-  transform: rotate(180deg);
+  top: 45%;
+  transform: rotate(90deg);
+  transition: all 0.3s;
+  @include mq(md) {
+    top: 49%;
+  }
+}
+
+.faq-list__item-question::after {
+  top: 45%;
+  transform: rotate(0deg);
+  @include mq(md) {
+    top: 49%;
+  }
 }
 
 .faq-list__item-question.is-active::before {
-  transform: rotate(90deg);
+  transform: rotate(0deg);
 }
+
+.faq-list__item-question.is-active::after {
+  opacity: 0;
+}
+
 
 .faq-list__item-answer {
   display: block;
+  margin-top: rem(8);
   padding-top: rem(24);
   padding-right: rem(16);
   padding-bottom: rem(24);
   padding-left: rem(16);
-  font-size: rem(16);
-  line-height: 1.4375;
+  font-size: rem(11);
+  line-height: 1.181;
   font-weight: $regular;
   font-family: $base-font-family;
   border: 1px solid $gold;
@@ -69,6 +97,8 @@
     padding-right: rem(40);
     padding-bottom: rem(40);
     padding-left: rem(40);
+    font-size: rem(16);
     margin-top: rem(16);
+    line-height: 1.188;
   }
 }

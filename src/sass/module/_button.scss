@@ -82,13 +82,8 @@
     padding-bottom: rem(5);
 }
 
-
-
-
 .button--transparent::before {
-    @include mq("md") {
-        background-color: transparent;
-    }
+    background-color: transparent;
 }
 
 .button--white {

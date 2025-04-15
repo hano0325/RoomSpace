@@ -367,10 +367,10 @@
 }
 
 .form-radio label:not(:first-of-type) {
-  margin-top: prem(10);
+  margin-top: rem(10);
   @include mq(md) {
     margin-top: 0;
-    margin-left: prem(30);
+    margin-left: rem(30);
   }
 }
 
@@ -379,10 +379,10 @@
 }
 
 .form-radio input + span {
-  padding: 0 0 0 prem(25);
+  padding: 0 0 0 rem(25);
   position: relative;
   display: block;
-  font-size: prem(15);
+  font-size: rem(15);
   line-height: 1;
   cursor: pointer;
   @include mq(md) {
@@ -392,8 +392,8 @@
 
 .form-radio input + span::before {
   content: "";
-  width: prem(15);
-  height: prem(15);
+  width: rem(15);
+  height: rem(15);
   display: block;
   position: absolute;
   top: 50%;
@@ -406,12 +406,12 @@
 
 .form-radio input + span::after {
   content: "";
-  padding: prem(2);
-  width: prem(7);
-  height: prem(7);
+  padding: rem(2);
+  width: rem(7);
+  height: rem(7);
   position: absolute;
   top: 50%;
-  left: prem(4);
+  left: rem(4);
   transform: translateY(-50%);
   border: 1px solid transparent;
   border-radius: 50%;
