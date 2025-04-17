@@ -1,0 +1,82 @@
+@use "global" as *;
+
+.mv-lower {
+  position: relative;
+  height: rem(461);
+  min-height: rem(400);
+  position: left;
+  object-fit: cover;
+  @include mq("md") {
+    height: rem(548);
+  }
+}
+
+
+.mv-lower__inner {
+  position: relative;
+  height: inherit;
+  min-height: inherit;
+}
+
+.mv-lower__title {
+  position: absolute;
+  z-index: 10;
+  font-weight: $regular;
+  color: $white;
+  transform: translate(-50%, 50%);
+  top: 35%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  @include mq("md") {
+    top: 41%;
+    left: 50%;
+  }
+}
+
+.mv-lower__title-main {
+  font-family: $Noto-Serif-JP;
+  font-size: rem(40);
+  line-height: 1.2;
+  font-weight: $regular;
+  color: $white;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  @include mq("md") {
+    width: 100%;
+    font-size: rem(80);
+    line-height: 1.25;
+  }
+}
+
+.mv-lower__title-main.is-visible {
+  opacity: 1;
+}
+
+.mv-lower__title-main span span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.mv-lower__title-main span span.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mv-lower__inner {
+  position: relative;
+  height: inherit;
+  min-height: inherit;
+}
+
+.mv-lower__img {
+height: inherit;
+}
+
+.mv-lower__img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}

@@ -27,6 +27,19 @@
     }
 }
 
+.title__main--lower {
+    font-family: $Noto-Serif-JP;
+    font-size: rem(32);
+    line-height: 1.406;
+    color: $deep-brown;
+    font-weight: $semibold;
+    text-align: center;
+    @include mq("md") {
+        font-size: rem(40);
+        line-height: 1;
+}
+}
+
 .title__sub {
     display: block;
     font-size: rem(12);

@@ -82,7 +82,7 @@
 .price__time,
 .price__answer,
 .price__usage {
-    width: 72%;
+    width: 73%;
     @include mq("md") {
         width: 100%;
     }
@@ -107,7 +107,6 @@
 }
 
 .price__plan {
-    width: 30%;
     font-size: rem(25);
     line-height: 0.88;
     font-family: $base-font-family;
@@ -138,7 +137,9 @@
     padding-right: rem(10);
     padding-bottom: rem(36);
     padding-left: rem(10);
+    width: 28%;
     @include mq("md") {
+        width: 100%;
         font-size: rem(27);
         line-height: 0.814;
         padding-top: rem(50);

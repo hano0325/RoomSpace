@@ -59,7 +59,7 @@
     line-height: 1.189;
     letter-spacing: 0.35em;
     font-weight: $regular;
-    word-break: break-all;
+    word-break: keep-all;
     white-space: normal;
     text-align: left;
     opacity: 0;
@@ -85,78 +85,4 @@
 .mv__title-main span span.is-active {
   opacity: 1;
   transform: translateY(0);
-}
-
-
-
-.mv-lower {
-  position: relative;
-  height: rem(416);
-  min-height: rem(400);
-  @include mq("md") {
-    height: rem(516);
-  }
-}
-
-.mv-lower--mask::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(64, 143, 149, 0.3);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-
-.mv-lower__inner {
-  position: relative;
-  height: inherit;
-  min-height: inherit;
-}
-
-.mv-lower__title {
-  position: absolute;
-  z-index: 10;
-  font-weight: $regular;
-  color: $white;
-  transform: translate(-50%, 50%);
-  top: 35%;
-  left: 50%;
-  width: 100%;
-  text-align: center;
-  @include mq("md") {
-    top: 41%;
-    left: 50%;
-  }
-}
-
-.mv-lower__title-main {
-  font-family: $Noto-Serif-JP;
-  font-size: rem(36.8);
-  line-height: 1.2;
-  font-weight: $regular;
-  @include mq("md") {
-    width: 100%;
-    font-size: rem(70.4);
-    line-height: 1.25;
-  }
-}
-
-.mv-lower__inner {
-  position: relative;
-  height: inherit;
-  min-height: inherit;
-}
-
-.mv-lower__img {
-height: inherit;
-}
-
-.mv-lower__img img {
-width: 100%;
-height: 100%;
-object-fit: cover;
 }

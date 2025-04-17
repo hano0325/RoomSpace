@@ -26,8 +26,9 @@
   writing-mode: horizontal-tb;
   transition: all 0.3s;
   cursor: pointer;
+  white-space: nowrap;
   @include mq("md") {
-    width: 15%;
+    width: 16%;
   }
 }
 
@@ -59,7 +60,7 @@
   @include mq("md") {
     grid-template-columns: repeat(2, 1fr);
     column-gap: rem(40);
-    row-gap: rem(80);
+    row-gap: rem(122);
     max-width: 100%;
     margin-right: 0;
     margin-left: 0;
@@ -67,7 +68,14 @@
 }
 
 .tab__campaign-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
   background-color: $white;
+  z-index: 10;
+  border: 1px solid $gold;
 }
 
 .tab__campaign-container-text {
@@ -95,10 +103,27 @@
 }
 
 .tab__campaign-card {
-  display: block;
+  position: relative;
   background-color: $white;
-  box-shadow: rem(4) rem(4) rem(10) rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  display: block;
 }
+
+.tab__campaign-card::before {
+  content: "";
+  position: absolute;
+  background-color: $beige;
+  right: rem(-12.8);
+  bottom: rem(-8);
+  top: rem(10);
+  left: rem(9);
+  z-index: -1;
+  @include mq("md") {
+    left: rem(15);
+    bottom: rem(-16);
+  }
+}
+
 
 .tab__campaign-img img {
   min-height: auto;
@@ -140,23 +165,26 @@
   }
 }
 
-.tab__campaign-text-box-subtitle {
+.tab__campaign-text-box-content {
   margin-top: rem(4);
+  padding-bottom: rem(8);
+  border-bottom: 1px solid $gold-muted;
+}
+
+.tab__campaign-text-box-plan,
+.tab__campaign-text-box-description  {
   font-family: $base-font-family;
   font-weight: $medium;
-  color: $gold-dark;
+  color: $deep-brown;
   font-size: rem(16);
   line-height: 1.5;
-  border-bottom: 1px solid $gold-muted;
-  padding-bottom: rem(8);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
   @include mq("md") {
     font-size: rem(24);
-    line-height: 1.458;
-    padding-bottom: rem(4);
+    line-height: 1.208;
   }
 }
 
@@ -170,10 +198,10 @@
 }
 
 .tab__campaign-money-title {
-  color: $gold-dark;
+  color: $deep-brown;
   font-family: $base-font-family;
   font-weight: $regular;
-  font-size: rem(14);
+  font-size: rem(16);
   line-height: 1.714285;
   @include mq("md") {
     font-size: rem(16);
@@ -186,40 +214,96 @@
   margin-top: rem(9);
   align-items: center;
   justify-content: center;
+  @include mq("md"){
+    margin-top: rem(23);
+  }
 }
 
 .tab__campaign-discount {
   font-size: rem(20);
-  text-decoration: line-through;
-  text-decoration-color: $accent-red;
   color: $gold-dark;
-  margin-right: rem(16);
   padding-top: rem(11);
-  font-family: $base-en-font;
+  font-family: $Noto-Serif-JP;
   font-weight: $bold;
-  line-height: 1;
+  line-height: 1.6;
   @include mq("md") {
     padding-top: rem(16);
     font-size: rem(24);
-    margin-right: rem(40);
   }
 }
 
+.tab__campaign-discount-line {
+  position: relative;
+
+}
+
+.tab__campaign-discount-line::after {
+  content: "";
+  transform: rotate(7deg);
+  width: 100%;
+  border-top: 1px solid $accent-red;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
 .tab__campaign-main {
-  font-size: rem(27.2);
+  font-size: rem(32);
   line-height: 1;
-  font-family: $base-en-font;
+  font-family: $Noto-Serif-JP;
   font-weight: $bold;
   color: $gold-muted;
   @include mq("md") {
-    font-size: rem(40);
+    font-size: rem(50);
+    line-height: 0.8;
   }
 }
+
+.tab__campaign-fee {
+  display: flex;
+  gap: rem(45);
+  margin-top: rem(8);
+  align-items: center;
+  justify-content: center;
+  @include mq("md") {
+    gap: rem(120);
+  }
+}
+
+.tab__campaign-discount {
+  position: relative;
+}
+
+.tab__campaign-discount::after {
+  position: absolute;
+  content: url(../images/common/Vector-sp.svg);
+  width: rem(32);
+  right: rem(-37.28);
+  top: rem(4.8);
+  @include mq("md") {
+    content: url(../images/common/Vector-campaign.svg);
+    right: rem(-96);
+    width: rem(74);
+      top: rem(12.8);
+  }
+}
+
+.tab__campaign-main-yen {
+  font-size: rem(25);
+  line-height: 1.28;
+  font-family: $Noto-Serif-JP;
+  font-weight: $bold;
+  color: $gold-muted;
+  @include mq("md") {
+    font-size: rem(45);
+    line-height: 0.888;
+  }
+}
+
 
 .tab__campaign-text-main {
   @include mq("md") {
     font-family: $base-font-family;
-    color: $gold-dark;
+    color: $deep-brown;
     margin-top: rem(24);
     font-size: rem(16);
     line-height: 1.5;
@@ -234,14 +318,14 @@
 
 .tab__campaign-date-container {
   @include mq("md") {
-    margin-top: rem(32);
+    margin-top: rem(44);
   }
 }
 
 .tab__campaign-date-time {
   @include mq("md") {
-    font-family: $base-en-font;
-    font-weight: $bold;
+    font-family: $Noto-Serif-JP;
+    font-weight: $regular;
     color: $gold-muted;
     font-size: rem(16);
     line-height: 1.125;

@@ -51,10 +51,10 @@
 
 .about__title-sub {
     font-family: $Noto-Serif-JP;
-    font-size: rem(20);
+    font-size: rem(33);
     line-height: 1.2;
     color: $deep-brown;
-    font-weight: $bold;
+    font-weight: $semibold;
     border-bottom: 1px solid $gold-muted;
     padding-bottom: rem(4);
     @include mq("md") {

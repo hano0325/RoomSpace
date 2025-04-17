@@ -86,6 +86,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       });
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+      // mvセクション用のSwiper
+      const mvSwiper = new Swiper(".js-mv-swiper", {
+        loop: true,
+        effect: "fade",
+        speed: 3000,
+        allowTouchMove: false,
+        autoplay: {
+          delay: 3000,
+        },
+      });
+
 // キャンペーンセクション用のSwiper
 var campaignSwiper = new Swiper('.js-campaign-swiper', {
   loop: true, // 無限ループ
@@ -116,37 +128,6 @@ var campaignSwiper = new Swiper('.js-campaign-swiper', {
     }
   }
 });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const triggerMargin = 150;
-  
-    // 🔹 読み込み時に .scroll-onload のみに is-active を付与
-    const onloadElements = document.querySelectorAll('.scroll-onload');
-    onloadElements.forEach(function (elem) {
-      setTimeout(() => {
-        elem.classList.add('is-active');
-      }, 200); // ふわっと演出用ディレイ（任意）
-    });
-  
-    // 🔸 スクロールで登場する要素
-    const scrollElements = document.querySelectorAll('.scroll-up, .scroll-left, .scroll-right');
-  
-    function activateOnScroll() {
-      scrollElements.forEach(function (elem) {
-        const elemTop = elem.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-  
-        if (windowHeight > elemTop + triggerMargin) {
-          elem.classList.add('is-active');
-        }
-      });
-    }
-  
-    // 初期チェック＆スクロールイベント
-    window.addEventListener('load', activateOnScroll);
-    window.addEventListener('scroll', activateOnScroll);
-  });
-
     
   $(document).ready(function () {
     // 初期状態で全ての答えを閉じる
@@ -160,37 +141,35 @@ var campaignSwiper = new Swiper('.js-campaign-swiper', {
   });
 
 
-  // ローディングとMVアニメーション
-  window.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.header');
-    const mv = document.querySelector('#mv');
-    const title = document.querySelector('.mv__title-main');
-    const spans = document.querySelectorAll('.mv__title-main span');
-  
-    // チラ見え防止：最初にすぐ空にする
+// ローディングとMVアニメーション
+window.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
+  const mv = document.querySelector('#mv');
+  const titles = document.querySelectorAll('.mv__title-main, .mv-lower__title-main');
+
+  // チラ見え防止＆文字を空に
+  titles.forEach(title => {
+    const spans = title.querySelectorAll('span');
+
     spans.forEach(span => {
       span.dataset.text = span.textContent;
       span.textContent = '';
     });
-  
-    // ヘッダーとMVを表示
-    header.classList.add('show');
-    mv.classList.add('show');
-  
+
     // タイトル全体をフェードイン
     title.classList.add('is-visible');
-  
+
     // 少し遅らせて文字アニメーション
     setTimeout(() => {
       spans.forEach((lineSpan, lineIndex) => {
         const text = lineSpan.dataset.text;
-  
+
         text.split('').forEach((char, i) => {
           const charSpan = document.createElement('span');
           charSpan.textContent = char;
           charSpan.style.display = 'inline-block';
           lineSpan.appendChild(charSpan);
-  
+
           setTimeout(() => {
             charSpan.classList.add('is-active');
           }, (i + lineIndex * 8) * 50);
@@ -198,5 +177,33 @@ var campaignSwiper = new Swiper('.js-campaign-swiper', {
       });
     }, 400);
   });
-  
+
+  // ヘッダーとMV表示
+  header.classList.add('show');
+  mv.classList.add('show');
+});
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const triggerMargin = 0;
+
+  const scrollElements = document.querySelectorAll('.scroll-up, .scroll-left, .scroll-right');
+
+  function activateOnScroll() {
+    scrollElements.forEach(function (elem) {
+      const elemTop = elem.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (elemTop < windowHeight - triggerMargin) {
+        elem.classList.add('is-active');
+      }
+    });
+  }
+
+  window.addEventListener('load', activateOnScroll);
+  window.addEventListener('scroll', activateOnScroll);
+});
+
+
+
 

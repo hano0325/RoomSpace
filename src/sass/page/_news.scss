@@ -60,12 +60,16 @@
 }
 
 .news__text {
+    margin-top: rem(18);
+    font-size: rem(15);
     font-family: $base-font-family;
     font-weight: $regular;
-    font-size: rem(15);
     line-height: 1.6;
     color: $deep-brown;
-    margin-top: rem(18);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
     @include mq("md") {
         font-size: rem(16);
         margin-top: 0;

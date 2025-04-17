@@ -92,7 +92,9 @@
   }
 
   .campaign__button-container {
+    display: none;
     @include mq("md") {
+        display: block;
         position: relative;
         right: -65%;
         top: rem(-710);
@@ -141,6 +143,13 @@
    color: $deep-brown;
    font-family: $base-font-family;
    font-weight: $medium;
+}
+
+.campaign__text-box-content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 
 
@@ -198,10 +207,10 @@
 }
 
 .campaign__discount-line::after {
-    content: '';
+    content: "";
     transform: rotate(7deg);
     width: 100%;
-    border-top: 3px solid $accent-red;
+    border-top: 0.8px solid $accent-red;
     position: absolute;
     top: 50%;
     left: 0;

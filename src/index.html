@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="" />
   <meta property="og:description" content="" />
   <!-- ファビコン -->
-  <link rel="”icon”" href="./assets/images/common/pc-icon.ico" />
+  <link rel="icon" href="./assets/images/common/noto-pc.png" />
   <!-- フォント -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 />
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
   <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -100,55 +100,57 @@
               <div class="menu__nav-container-first">
                 <ul class="menu__nav-item">
                   <li class="menu__nav-item-main">
-                    <a href="#">キャンペーン</a>
+                    <a href="campaign.html">キャンペーン</a>
                   </li>
                   <li class="menu__nav-item-sub">
-                    <a href="#">コワーキングスペース</a>
+                    <a href="index.html#service">コワーキングスペース</a>
                   </li>
                   <li class="menu__nav-item-sub">
-                    <a href="#">レンタルオフィス</a>
+                    <a href="index.html#service">レンタルオフィス</a>
                   </li>
                   <li class="menu__nav-item-sub">
-                    <a href="#">会議室</a>
+                    <a href="index.html#service">会議室</a>
                   </li>
                   <li class="menu__nav-item-main">
-                    <a href="#">会社概要</a>
+                    <a href="about.html">会社概要</a>
                   </li>
                 </ul>
                 <ul class="menu__nav-item">
                   <li class="menu__nav-item-main">
-                    <a href="#">サービス</a>
+                    <a href="index.html#service">サービス</a>
                   </li>
                   <li class="menu__nav-item-main">
-                    <a href="#">お知らせ</a>
+                    <a href="news.html">お知らせ</a>
                   </li>
                 </ul>
               </div>
-                <div class="menu__nav-container-second">
+              <div class="menu__nav-container-second">
                 <ul class="menu__nav-item">
                   <li class="menu__nav-item-main">
-                    <a href="#">イベント</a>
+                    <a href="event.html">イベント</a>
                   </li>
                   <li class="menu__nav-item-sub">
-                    <a href="#">コワーキングスペース</a>
+                    <a href="index.html#service">コワーキングスペース</a>
                   </li>
                   <li class="menu__nav-item-sub">
-                    <a href="#">レンタルオフィス</a>
+                    <a href="index.html#service">レンタルオフィス</a>
                   </li>
                   <li class="menu__nav-item-sub">
-                    <a href="#">会議室</a>
+                    <a href="index.html#service">会議室</a>
+                  </li>
+                </ul>
+                <ul class="menu__nav-item">
+                  <li class="menu__nav-item-main">
+                    <a href="index.html#faq">よくある質問</a>
                   </li>
                   <li class="menu__nav-item-main">
-                    <a href="#">よくある質問</a>
+                    <a href="privacy.html">プライバシーポリシー</a>
                   </li>
                   <li class="menu__nav-item-main">
-                    <a href="#">プライバシーポリシー</a>
+                    <a href="terms.html">利用規約</a>
                   </li>
                   <li class="menu__nav-item-main">
-                    <a href="#">利用規約</a>
-                  </li>
-                  <li class="menu__nav-item-main">
-                    <a href="#">お問い合わせ</a>
+                    <a href="contact.html">お問い合わせ</a>
                   </li>
                 </ul>
               </div>
@@ -272,7 +274,7 @@
                     <p class="campaign__money-title">初月</p>
                     <div class="campaign__fee">
                       <p class="campaign__discount"><span class="campaign__discount-line">¥35,000</span></p>
-                      <p class="campaign__main">¥25,000</p>
+                      <p class="campaign__main"><span class="campaign__main-yen">¥</span>25,000</p>
                     </div>
                   </div>
                 </div>
@@ -312,7 +314,7 @@
             </div>
             <div class="scroll-up">
               <div class="about__text-container">
-                <p class="about__title-sub">働きやすさを追求した空間</p>
+                <p class="about__title-sub">働きやすさ<br class="u-mobile">を追求した空間</p>
                 <p class="about__text text">
                   私たちのコワーキングスペースは、ただの作業場所ではなく、「働く・学ぶ・つながる」をコンセプトにしたコミュニティ空間です。フリーランス、スタートアップ、リモートワーカー、クリエイター、学生など、多様な人々が集い、それぞれの目標に向かって前進できる環境を提供します。
                 </p>
@@ -437,7 +439,9 @@
             <a href="#" class="event__link">
               <img src="./assets/images/common/morning-coworking-cafe.jpg" alt="朝活ワークに取り組む女性二人がカフェでノートパソコンを見る様子">
               <div class="event__box">
-                <div class="event__label">コワーキングスペース</div>
+                <div class="event__label">
+                  <p class="event__label-text">コワーキングスペース</p>
+                </div>
                 <div class="event__text-box">
                   <p class="event__date">2025年4月23日（水）7:30〜9:30</p>
                   <p class="event__text">朝活コワーク＆モーニングカフェ体験会</p>
@@ -449,7 +453,9 @@
             <a href="#" class="event__link">
               <img src="./assets/images/common/coworking-sidejob-talk.jpg" alt="夜のコワーキングスペースで談笑する複数の男女">
               <div class="event__box">
-                <div class="event__label">コワーキングスペース</div>
+                <div class="event__label">
+                  <p class="event__label-text">コワーキングスペース</p>
+                </div>
                 <div class="event__text-box">
                   <p class="event__date">2025年5月2日（金）18:30〜20:30</p>
                   <p class="event__text">コワーキング×副業ナイトトーク</p>
@@ -461,7 +467,9 @@
             <a href="#" class="event__link">
               <img src="./assets/images/common/oshizukue-contest-meeting.jpg" alt="グループで机を囲みながらノートPCを操作する人々">
               <div class="event__box">
-                <div class="event__label">コワーキングスペース</div>
+                <div class="event__label">
+                  <p class="event__label-text">コワーキングスペース</p>
+                </div>
                 <div class="event__text-box">
                   <p class="event__date">2025年5月12日（日）14:00〜16:00</p>
                   <p class="event__text">「推し机」コンテスト＆内容ミートアップ</p>
@@ -469,11 +477,14 @@
               </div>
             </a>
           </li>
+          
           <li class="event__item">
             <a href="#" class="event__link">
               <img src="./assets/images/common/office-lunch-networking.jpg" alt="カフェ風の空間で談笑するビジネスパーソンたち">
               <div class="event__box">
-                <div class="event__label">レンタルオフィス</div>
+                <div class="event__label">
+                  <p class="event__label-text">レンタルオフィス</p>
+                </div>
                 <div class="event__text-box">
                   <p class="event__date">2025年4月19日（金）12:00〜13:00</p>
                   <p class="event__text">入居者限定！オフィス契約者交流ランチ会</p>
@@ -481,11 +492,14 @@
               </div>
             </a>
           </li>
+          
           <li class="event__item">
             <a href="#" class="event__link">
               <img src="./assets/images/common/company-registration-seminar.jpg" alt="プレゼンを受けるビジネスパーソンたちのセミナー風景">
               <div class="event__box">
-                <div class="event__label">レンタルオフィス</div>
+                <div class="event__label">
+                  <p class="event__label-text">レンタルオフィス</p>
+                </div>
                 <div class="event__text-box">
                   <p class="event__date">2025年5月6日（月）15:00〜16:30</p>
                   <p class="event__text">「法人登記の基本を落とし穴」セミナー</p>
@@ -493,11 +507,14 @@
               </div>
             </a>
           </li>
+          
           <li class="event__item">
             <a href="#" class="event__link">
               <img src="./assets/images/common/office-diy-consultation.jpg" alt="書類を手に説明する男女と話を聞く女性">
               <div class="event__box">
-                <div class="event__label">レンタルオフィス</div>
+                <div class="event__label">
+                  <p class="event__label-text">レンタルオフィス</p>
+                </div>
                 <div class="event__text-box">
                   <p class="event__date">2025年5月18日（土）11:00〜12:30</p>
                   <p class="event__text">レンタルオフィス内装DIY相談会</p>
@@ -505,6 +522,7 @@
               </div>
             </a>
           </li>
+          
         </ul>
         <div class="event__button">
           <a href="event.html" class="button">
@@ -733,7 +751,7 @@
       <div class="footer__nav-container">
         <div class="footer__logo-container">
           <p class="footer__logo">
-            <a href="#">
+            <a href="index.html">
               <img
                 src="./assets/images/common/logo.svg"
                 alt="LumeSpace"
@@ -742,18 +760,20 @@
           </p>
           <ul class="footer__sns-button-items">
             <li class="footer__sns-button-item">
-              <a href="https://www.facebook.com/" target="_blank"
-                ><img
+              <a href="https://www.facebook.com/" target="_blank">
+                <img
                   src="./assets/images/common/FacebookLogo.svg"
                   alt="facebookのアイコン"
-              /></a>
+                />
+              </a>
             </li>
             <li class="footer__sns-button-item">
-              <a href="https://www.instagram.com/" target="_blank"
-                ><img
+              <a href="https://www.instagram.com/" target="_blank">
+                <img
                   src="./assets/images/common/InstagramLogo.svg"
                   alt="Instagramのアイコン"
-              /></a>
+                />
+              </a>
             </li>
           </ul>
         </div>
@@ -765,57 +785,57 @@
           <div class="menu__nav-container-first">
             <ul class="menu__nav-item">
               <li class="menu__nav-item-main">
-                <a href="#">キャンペーン</a>
+                <a href="campaign.html">キャンペーン</a>
               </li>
               <li class="menu__nav-item-sub">
-                <a href="#">コワーキングスペース</a>
+                <a href="index.html#service">コワーキングスペース</a>
               </li>
               <li class="menu__nav-item-sub">
-                <a href="#">レンタルオフィス</a>
+                <a href="index.html#service">レンタルオフィス</a>
               </li>
               <li class="menu__nav-item-sub">
-                <a href="#">会議室</a>
+                <a href="index.html#service">会議室</a>
               </li>
               <li class="menu__nav-item-main">
-                <a href="#">会社概要</a>
+                <a href="about.html">会社概要</a>
               </li>
             </ul>
             <ul class="menu__nav-item">
               <li class="menu__nav-item-main">
-                <a href="#">サービス</a>
+                <a href="index.html#service">サービス</a>
               </li>
               <li class="menu__nav-item-main">
-                <a href="#">お知らせ</a>
+                <a href="news.html">お知らせ</a>
               </li>
             </ul>
           </div>
-            <div class="menu__nav-container-second">
+          <div class="menu__nav-container-second">
             <ul class="menu__nav-item">
               <li class="menu__nav-item-main">
-                <a href="#">イベント</a>
+                <a href="event.html">イベント</a>
               </li>
               <li class="menu__nav-item-sub">
-                <a href="#">コワーキングスペース</a>
+                <a href="index.html#service">コワーキングスペース</a>
               </li>
               <li class="menu__nav-item-sub">
-                <a href="#">レンタルオフィス</a>
+                <a href="index.html#service">レンタルオフィス</a>
               </li>
               <li class="menu__nav-item-sub">
-                <a href="#">会議室</a>
+                <a href="index.html#service">会議室</a>
               </li>
             </ul>
             <ul class="menu__nav-item">
               <li class="menu__nav-item-main">
-                <a href="#">よくある質問</a>
+                <a href="index.html#faq">よくある質問</a>
               </li>
               <li class="menu__nav-item-main">
-                <a href="#">プライバシーポリシー</a>
+                <a href="privacy.html">プライバシーポリシー</a>
               </li>
               <li class="menu__nav-item-main">
-                <a href="#">利用規約</a>
+                <a href="terms.html">利用規約</a>
               </li>
               <li class="menu__nav-item-main">
-                <a href="#">お問い合わせ</a>
+                <a href="contact.html">お問い合わせ</a>
               </li>
             </ul>
           </div>
@@ -825,6 +845,6 @@
         Copyright © 2021 - 2023 CodeUps LLC. All Rights Reserved.
       </p>
     </div>
-</footer>
+  </footer>
 </body>
 </html>

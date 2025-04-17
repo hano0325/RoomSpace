@@ -50,12 +50,14 @@
 
 .footer__sns-button-items {
     display: flex;
-    margin-top: rem(16);
+    margin-top: rem(8);
+    padding-left: rem(35);
     gap: rem(16);
     @include mq("md") {
         margin-top: 0;
         margin-left: rem(40);
         align-items: flex-end;
+        padding-left: 0;
     }
 }
 
