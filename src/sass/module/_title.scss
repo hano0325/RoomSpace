@@ -1,6 +1,7 @@
 @use "global" as *;
 
-.title {
+.title,
+.title-lower {
     color: $deep-brown;
     text-align: center;
 }
@@ -9,15 +10,8 @@
     color: $gold-muted;
 }
 
-.title__main--white::first-letter {
-    @include mq("md") {
-        color: $white;
-    }
-}
-
 .title__main {
     font-size: rem(32);
-    line-height: 1.25;
     font-family: $Noto-Serif-JP;
     font-weight: $medium;
     display: block;
@@ -27,12 +21,12 @@
     }
 }
 
-.title__main--lower {
+.title-lower__main {
     font-family: $Noto-Serif-JP;
     font-size: rem(32);
     line-height: 1.406;
     color: $deep-brown;
-    font-weight: $semibold;
+    font-weight: $regular;
     text-align: center;
     @include mq("md") {
         font-size: rem(40);
@@ -63,3 +57,4 @@
 .title__sub.title__sub--big {
     color: $white;
 }
+

@@ -1,0 +1,118 @@
+@use "global" as *;
+
+
+.news-detail__inner {
+    width: 100%;
+    padding-right: rem(15);
+    padding-left: rem(15);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: rem(600);
+    background-color: $ivory;
+    @include mq("md") {
+    max-width: rem(1130);
+    padding-right: rem(25);
+    padding-left: rem(25);
+    }
+}
+
+.news-detail__container {
+    padding-top: rem(30);
+    padding-bottom: rem(40);
+    @include mq("md") {
+        padding-right: rem(30);
+        padding-left: rem(30);
+    }
+}
+
+.about__img img{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 345 / 227;
+    object-fit: cover;
+    @include mq("md") {
+        aspect-ratio: 540 / 356;
+    }
+}
+
+.news-detail__img {
+    width: 100%;
+    height: auto;
+}
+
+.news-detail__img img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 345 / 231;
+    object-fit: cover;
+    @include mq("md") {
+        aspect-ratio: 1023 / 576;
+    }
+}
+
+
+.news-detail__date {
+    font-family: $base-font-family;
+    margin-top: rem(11);
+    @include mq("md"){
+        margin-top: rem(21);
+    }
+}
+
+.news-detail__time {
+    font-weight: $medium;
+    font-size: rem(14);
+    line-height: calc(17/ 14);
+    color: $ash-brown;
+}
+
+.news-detail__title {
+    font-weight: $medium;
+    font-size: rem(24);
+    color: $black;
+    line-height: calc(29/ 24);
+    padding-bottom: rem(7);
+    border-bottom: 1px solid $gold;
+    @include mq("md") {
+        line-height: calc(38/ 32);
+        padding-bottom: rem(11);
+    }
+}
+
+.news-detail__sns {
+    display: flex;
+    gap: rem(9);
+    margin-top: rem(12);
+    @include mq("md") {
+        margin-top: rem(20);
+    }
+}
+
+.news-detail__sns-icon {
+    width: rem(27);
+    height: rem(27);
+}
+
+.news-detail__body {
+    margin-top: rem(12);
+    @include mq("md") {
+        margin-top: rem(17);
+    }
+}
+
+.news-detail__text {
+    font-family: $base-font-family;
+    font-size: rem(16);
+    line-height: calc( 19/ 16);
+}
+
+.news-detail__button {
+    text-align: center;
+    margin-top: rem(50);
+    @include mq("md") {
+        margin-top: rem(80);
+    }
+}
+
