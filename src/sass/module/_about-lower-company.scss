@@ -1,0 +1,107 @@
+@use "global" as *;
+
+.about-lower-company__inner {
+    width: 100%;
+    padding-right: rem(35);
+    padding-left: rem(35);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: rem(600);
+    @include mq("md") {
+    max-width: rem(930);
+    padding-right: rem(25);
+    padding-left: rem(25);
+    }
+}
+
+.about-lower-company__list {
+    margin-top: rem(72);
+    @include mq("md") {
+        margin-top: rem(98);
+    }
+}
+
+.about-lower-company__item:first-of-type {
+    padding-top: 0;
+}
+
+.about-lower-company__item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $gold;
+    padding-top: rem(30);
+    padding-bottom: rem(20);
+    gap: rem(25);
+    @include mq("md") {
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: rem(40);
+    gap: 0;
+    }
+}
+
+.about-lower-company__title {
+    font-family: $Noto-Serif-JP;
+    font-size: rem(32);
+    line-height: 1.406;
+    color: $deep-brown;
+    font-weight: $semibold;
+    text-align: center;
+    @include mq("md") {
+        font-size: rem(40);
+        line-height: 1;
+}
+}
+
+
+
+.about-lower-company__item-label {
+    font-family: $base-font-family;
+    font-weight: $regular;
+    font-size: rem(15);
+    line-height: 1.6;
+    text-align: left;
+    color: $deep-brown;
+    @include mq("md") {
+        padding-left: rem(53);
+        width: 41%;
+    }
+}
+
+.about-lower-company__item-data {
+    font-family: $base-font-family;
+    font-weight: $regular;
+    font-size: rem(16);
+    line-height: 1.1875;
+    color: $deep-brown;
+    text-align: justify;
+    flex: 1;
+}
+
+.about-lower-company__map {
+    display: inline-block;
+    margin-top: rem(40);
+    width: 100%;
+    height: auto;
+    @include mq("md") {
+        margin-top: rem(120);
+    }
+}
+
+.about-lower-company__map iframe {
+    aspect-ratio: 375 / 430;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @include mq("md") {
+        aspect-ratio: 1080 / 380;
+    }
+}
+
+.about-lower-company__map-text {
+    font-family: $base-font-family;
+    font-weight: $regular;
+    color: $deep-brown;
+    font-size: rem(15);
+    line-height: 1.933;
+}

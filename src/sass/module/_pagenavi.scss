@@ -24,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $base-en-font;
+  font-family: $Noto-Serif-JP;
   position: relative;
   margin: 0 rem(6);
   padding: 0 rem(12);
@@ -51,7 +51,7 @@
   align-items: center;
   color: $white;
   font-weight: $bold;
-  font-family: $base-en-font;
+  font-family: $Noto-Serif-JP;
   background-color: $gold-muted;
   border-color: $gold-muted;
   margin: 0 rem(6);
@@ -111,8 +111,8 @@
 .pagenavi .wp-pagenavi .previouspostslink::after,
 .pagenavi .wp-pagenavi .previouspostslink-detail a::after{
   content: "";
-  border-right: 1px solid #408f95;
-  border-top: 1px solid #408f95;
+  border-right: 1px solid $gold-muted;
+  border-top: 1px solid $gold-muted;
   display: inline-block;
   top: rem(13);
   left: rem(17);

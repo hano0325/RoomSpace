@@ -88,7 +88,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     document.addEventListener("DOMContentLoaded", function () {
       // mvセクション用のSwiper
-      const mvSwiper = new Swiper(".js-mv-swiper", {
+      var mvSwiper = new Swiper(".js-mv-swiper", {
         loop: true,
         effect: "fade",
         speed: 3000,
@@ -97,6 +97,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
           delay: 3000,
         },
       });
+  });
 
 // キャンペーンセクション用のSwiper
 var campaignSwiper = new Swiper('.js-campaign-swiper', {
@@ -181,7 +182,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // ヘッダーとMV表示
   header.classList.add('show');
   mv.classList.add('show');
-});
 });
 
 document.addEventListener('DOMContentLoaded', function () {

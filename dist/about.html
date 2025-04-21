@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="robots" content="noindex" />
+  <!-- meta情報 -->
+  <title>Lumespace</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="Lumespace" />
+  <!-- ogp -->
+  <meta property="og:title" content="Lumespace" />
+  <meta property="og:type" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:description" content="" />
+  <!-- ファビコン -->
+  <link rel="icon" href="./assets/images/common/noto-pc.png" />
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+  <!-- css -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="./assets/js/script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="index.html">
+          <img src="./assets/images/common/logo.png" alt="LumeSpace"
+        /></a>
+      </div>
+      <button class="header__hamburger hamburger js-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="header__nav-items">
+        <li class="header__nav-item">
+          <a href="campaign.html" class="header__nav-link">
+            <span>campaign</span>キャンペーン
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a href="about.html" class="header__nav-link">
+            <span>about us</span>会社概要</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="index.html#service" class="header__nav-link">
+            <span>service</span>サービス</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="news.html" class="header__nav-link">
+            <span>news</span>お知らせ</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="event.html" class="header__nav-link">
+            <span>event</span>イベント</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="index.html#price" class="header__nav-link">
+            <span>price</span>料金コース</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="index.html#faq" class="header__nav-link header__nav-link--large">
+            <span>faq</span>質問</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="contact.html" class="header__nav-link">
+            <span>contact</span>お問い合わせ</a>
+        </li>
+      </ul>
+      <nav class="header__drawer drawer js-drawer">
+        <div class="drawer__inner">
+          <div class="drawer__logo">
+            <a href="index.html">
+              <img src="./assets/images/common/logo.png" alt="LumeSpace"
+            /></a>
+          </div>
+          <button class="drawer__hamburger hamburger js-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="drawer__menu menu">
+          <div class="menu__nav-inner">
+            <div class="menu__nav-items">
+              <div class="menu__nav-container-first">
+                <ul class="menu__nav-item">
+                  <li class="menu__nav-item-main">
+                    <a href="campaign.html">キャンペーン</a>
+                  </li>
+                  <li class="menu__nav-item-sub">
+                    <a href="index.html#service">コワーキングスペース</a>
+                  </li>
+                  <li class="menu__nav-item-sub">
+                    <a href="index.html#service">レンタルオフィス</a>
+                  </li>
+                  <li class="menu__nav-item-sub">
+                    <a href="index.html#service">会議室</a>
+                  </li>
+                  <li class="menu__nav-item-main">
+                    <a href="about.html">会社概要</a>
+                  </li>
+                </ul>
+                <ul class="menu__nav-item">
+                  <li class="menu__nav-item-main">
+                    <a href="index.html#service">サービス</a>
+                  </li>
+                  <li class="menu__nav-item-main">
+                    <a href="news.html">お知らせ</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu__nav-container-second">
+                <ul class="menu__nav-item">
+                  <li class="menu__nav-item-main">
+                    <a href="event.html">イベント</a>
+                  </li>
+                  <li class="menu__nav-item-sub">
+                    <a href="index.html#service">コワーキングスペース</a>
+                  </li>
+                  <li class="menu__nav-item-sub">
+                    <a href="index.html#service">レンタルオフィス</a>
+                  </li>
+                  <li class="menu__nav-item-sub">
+                    <a href="index.html#service">会議室</a>
+                  </li>
+                </ul>
+                <ul class="menu__nav-item">
+                  <li class="menu__nav-item-main">
+                    <a href="index.html#faq">よくある質問</a>
+                  </li>
+                  <li class="menu__nav-item-main">
+                    <a href="privacy.html">プライバシーポリシー</a>
+                  </li>
+                  <li class="menu__nav-item-main">
+                    <a href="terms.html">利用規約</a>
+                  </li>
+                  <li class="menu__nav-item-main">
+                    <a href="contact.html">お問い合わせ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div id="mv" class="mv-lower">
+    <div class="mv-lower__inner">
+      <div class="mv-lower__title">
+        <h1 class="mv-lower__title-main"><span>About&nbsp;us</span></h1>
+      </div>
+      <div class="mv-lower__img">
+          <img  src="./assets/images/common/workspace.jpg" alt="">
+      </div>
+    </div>
+  <main>
+    <div class="breadcrumb breadcrumb-layout">
+      <div class="breadcrumb__inner">
+        <div class="breadcrumb__container">
+          <!-- Breadcrumb NavXTで出力される部分 ここから -->
+          <span>
+            <a href="#">
+              <span>TOP</span>
+            </a>
+          </span>
+          <div class="breadcrumb__vecter">
+            <img src="./assets/images/common/vecter-b.svg" alt=">">
+          </div>
+          <span>
+            <span class="current-item">会社概要</span>
+          </span>
+          <!-- Breadcrumb NavXTで出力される部分 ここまで -->
+        </div>
+      </div>
+    </div>
+    <main>
+    <section class="about-lower about-lower-layout">
+      <div class="about-lower__inner">
+        <div class="about-lower__container">
+          <div class="about-lower__img">
+            <img src="./assets/images/common/People.jpg" alt="笑顔のスタッフが並んでいる様子" />
+          </div>
+          <div class="about-lower__text-block">
+            <h2 class="about-lower__title">働きやすさ<br class="u-mobile">を追求した空間</h2>
+            <div class="about-lower__text-group">
+              <p class="about-lower__text">
+                私たちのコワーキングスペースは、ただの作業場所ではありません。<br>
+                「働く・学ぶ・つながる」をコンセプトに、多様な人々が出会い、刺激し合いながら成長<br>
+                できる、開かれたコミュニティ空間です。
+              </p>
+              <p class="about-lower__text">
+                ここには、フリーランスとして活躍する方、スタートアップの立ち上げに挑む<br>
+                起業家、リモートで働く会社員、ものづくりに情熱を注ぐクリエイター、<br>
+                そして将来に向けて学ぶ学生まで、さまざまな立場や価値観を持つ人々が集まっています。
+              </p>
+              <p class="about-lower__text">
+                それぞれが異なる目標や夢を抱えながらも、お互いの存在が刺激となり、思いがけないコラボレーションやアイデアが生まれることもしばしばです。<br>
+                作業に集中できる静かなワークスペース、リラックスして会話ができるラウンジスペース、そしてイベントや勉強会などの交流の場も充実しており、自分のペースで仕事や学びを進めながら、新しいつながりを築くことができます。
+              </p>
+              <p class="about-lower__text">
+              「一人で頑張る」から「仲間とともに高め合う」へ。<br>
+                この場所が、あなたの次の一歩を踏み出すきっかけとなることを願っています
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-lower-representative about-lower-representative-layout">
+      <div class="about-lower-representative__inner">
+        <div class="about-lower-representative__title title-lower">
+          <h2 class="title-lower__main">代表者メッセージ</h2>
+        </div>
+        <div class="about-lower-representative__container">
+          <div class="about-lower-representative__img">
+            <img src="./assets/images/common/woman.jpg" alt="代表の濱野凛が微笑んでいる様子" />
+          </div>
+          <div class="about-lower-representative__text-group">
+            <p class="about-lower-representative__text">
+              こんにちは、代表の濱野&emsp13;凛です。
+            </p>
+            <p class="about-lower-representative__text">
+              私たちのコワーキングスペースは、「ただ働くだけの場所」ではなく、人と人とが出会い、学び合い、時に助け合えるような、あたたかいコミュニティの場を目指して立ち上げました。
+            </p>
+            <p class="about-lower-representative__text">
+              働き方や生き方が多様化するいま、フリーランスやリモートワーカー、学生、クリエイターなど、さまざまな人たちが自分らしくいられる場所が求められています。
+            </p>
+            <p class="about-lower-representative__text">
+              ここでは、静かに集中する時間もあれば、ふとした会話から新しいアイデアが生まれることもあります。<br>
+              「ちょっと寄ってみたら、なんか面白い場所だった」——<br>
+              そんなふうに思ってもらえる空間になれば嬉しいです。<br>
+              あなたにとって、この場所が新たな一歩を踏み出すきっかけになりますように。
+            </p>
+            <p class="about-lower-representative__text">代表取締役社長&emsp13;濱野&emsp13;凛</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-lower-company about-lower-company-layout">
+      <div class="about-lower-company__inner">
+        <div class="about-lower-company__title title-lower">
+          <h2 class="title-lower__main">会社概要</h2>
+        </div>
+        <div class="about-lower-company__list">
+          <div class="about-lower-company__item">
+            <p class="about-lower-company__item-label">社名</p>
+            <p class="about-lower-company__item-data">株式会社Lumespace</p>
+          </div>
+          <div class="about-lower-company__item">
+            <p class="about-lower-company__item-label">設立</p>
+            <p class="about-lower-company__item-data">2001.03.25</p>
+          </div>
+          <div class="about-lower-company__item">
+            <p class="about-lower-company__item-label">代表取締役</p>
+            <p class="about-lower-company__item-data">濱野&emsp13;凛</p>
+          </div>
+          <div class="about-lower-company__item">
+            <p class="about-lower-company__item-label">資本金</p>
+            <p class="about-lower-company__item-data">1,000,000円</p>
+          </div>
+          <div class="about-lower-company__item">
+            <p class="about-lower-company__item-label">所在地</p>
+            <p class="about-lower-company__item-data">〒777-7777 千葉県柏市 ビルディング777</p>
+          </div>
+        </div>
+        <div class="about-lower-company__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3716.0857768564197!2d-157.89591742473462!3d21.347111580382993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006f441fbd3ef9%3A0x19d1808be9dbf05!2z5pel56uL44Gu5qi577yIVGhlIEhpdGFjaGkgVHJlZe-8iQ!5e0!3m2!1sja!2sjp!4v1744875527244!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p class="about-lower-company__map-text">google mapで見る</p>
+        </div>
+      </div>
+    </section>    
+    <section class="contact contact-layout contact-mask">
+      <div class="contact__inner">
+        <div class="contact__title title">
+          <p class="title__main title__main--big">Contact</p>
+          <h2 class="title__sub title__sub--big">お問い合わせ</h2>
+        </div>
+        <div class="contact__container">
+          <p class="contact__text">ご予約・お問い合わせはコチラ</p>
+          <div class="contact__button">
+            <a href="contact.html" class="button button--transparent">
+              <div class="button__container">
+                <p>Contact us</p>
+                <img
+                  src="./assets/images/common/Vector.png"
+                  alt="矢印"
+                  class="button-arrow"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="cycle-button js-page-top"></div>
+  </main>
+  <footer class="footer footer-layout">
+    <div class="footer__nav-inner inner">
+      <div class="footer__nav-container">
+        <div class="footer__logo-container">
+          <p class="footer__logo">
+            <a href="index.html">
+              <img
+                src="./assets/images/common/logo.svg"
+                alt="LumeSpace"
+              />
+            </a>
+          </p>
+          <ul class="footer__sns-button-items">
+            <li class="footer__sns-button-item">
+              <a href="https://www.facebook.com/" target="_blank">
+                <img
+                  src="./assets/images/common/FacebookLogo.svg"
+                  alt="facebookのアイコン"
+                />
+              </a>
+            </li>
+            <li class="footer__sns-button-item">
+              <a href="https://www.instagram.com/" target="_blank">
+                <img
+                  src="./assets/images/common/InstagramLogo.svg"
+                  alt="Instagramのアイコン"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__menu menu">
+      <div class="menu__nav-inner">
+        <div class="menu__nav-items">
+          <div class="menu__nav-container-first">
+            <ul class="menu__nav-item">
+              <li class="menu__nav-item-main">
+                <a href="campaign.html">キャンペーン</a>
+              </li>
+              <li class="menu__nav-item-sub">
+                <a href="index.html#service">コワーキングスペース</a>
+              </li>
+              <li class="menu__nav-item-sub">
+                <a href="index.html#service">レンタルオフィス</a>
+              </li>
+              <li class="menu__nav-item-sub">
+                <a href="index.html#service">会議室</a>
+              </li>
+              <li class="menu__nav-item-main">
+                <a href="about.html">会社概要</a>
+              </li>
+            </ul>
+            <ul class="menu__nav-item">
+              <li class="menu__nav-item-main">
+                <a href="index.html#service">サービス</a>
+              </li>
+              <li class="menu__nav-item-main">
+                <a href="news.html">お知らせ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__nav-container-second">
+            <ul class="menu__nav-item">
+              <li class="menu__nav-item-main">
+                <a href="event.html">イベント</a>
+              </li>
+              <li class="menu__nav-item-sub">
+                <a href="index.html#service">コワーキングスペース</a>
+              </li>
+              <li class="menu__nav-item-sub">
+                <a href="index.html#service">レンタルオフィス</a>
+              </li>
+              <li class="menu__nav-item-sub">
+                <a href="index.html#service">会議室</a>
+              </li>
+            </ul>
+            <ul class="menu__nav-item">
+              <li class="menu__nav-item-main">
+                <a href="index.html#faq">よくある質問</a>
+              </li>
+              <li class="menu__nav-item-main">
+                <a href="privacy.html">プライバシーポリシー</a>
+              </li>
+              <li class="menu__nav-item-main">
+                <a href="terms.html">利用規約</a>
+              </li>
+              <li class="menu__nav-item-main">
+                <a href="contact.html">お問い合わせ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copyright">
+        Copyright © 2021 - 2023 CodeUps LLC. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
