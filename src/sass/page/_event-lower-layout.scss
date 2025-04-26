@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.event-lower-layout {
+    margin-top: rem(70);
+    @include mq("md") {
+       margin-top: rem(150);
+    }
+}

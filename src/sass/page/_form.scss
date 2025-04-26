@@ -5,6 +5,7 @@
   padding-bottom: rem(24);
   @include mq(md) {
     display: flex;
+    align-items: center;
     padding-bottom: rem(35.2);
   }
 }
@@ -162,7 +163,7 @@
   line-height: 1.4166;
   border-radius: 0;
   color: $deep-brown;
-  background-image: url(../images/common/green.svg);
+  background-image: url(../images/common/gord.svg);
   background-repeat: no-repeat;
   background-size: rem(12);
   background-position: right center;
@@ -299,7 +300,7 @@
 
 .form__submit-container::after {
   position: absolute;
-  content: url(../images/common/Vector.svg);
+  content: url(../images/common/Vector-white.svg);
   width: rem(40);
   right: rem(59.2);
   top: 22%;
@@ -307,7 +308,7 @@
 
 .form__submit-container:hover::after {
   position: absolute;
-  content: url(../images/common/Vector-gord.png);
+  content: url(../images/common/Vector-gord.svg);
   width: rem(40);
   z-index: 2;
 }

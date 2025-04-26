@@ -1,0 +1,84 @@
+@use "global" as *;
+
+.card-lower-detail__date {
+    margin-top: rem(10);
+}
+
+
+.card-lower-detail__category,
+.card-lower-detail__date {
+    font-size: rem(14);
+    line-height: calc( 18/ 14 );
+    font-weight: $regular;
+    color: $dark-brown;
+}
+
+.card-lower-detail__title {
+    margin-top: rem(8);
+    font-size: rem(24);
+    line-height: calc( 29/ 24 );
+    font-weight: $bold;
+    color: $dark-brown;
+    padding-bottom: rem(8);
+    border-bottom: 1px solid $gold;
+    @include mq("md") {
+        line-height: calc( 38/ 32 );
+    }
+}
+
+.card-lower-detail__entry {
+    margin-top: rem(24);
+    @include mq("md") {
+        margin-top: rem(40);
+    }
+  }
+
+.card-lower-detail__img {
+    width: 100%;
+  }
+
+  .card-lower-detail__img img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 345 / 231;
+    margin-top: rem(24);
+    object-fit: cover;
+    @include mq("md") {
+      margin-top: rem(40);
+      aspect-ratio: 700 / 468;
+    }
+  }
+
+  .card-lower-detail__entry p {
+    margin-top: rem(8);
+    font-size: rem(16);
+    line-height: 1.5;
+    font-family: $base-font-family;
+    font-weight: $regular;
+    color: $dark-brown;
+  }
+
+  .card-lower-detail__entry ul {
+    margin-top: rem(10);
+  }
+  
+  .card-lower-detail__entry li {
+    padding-left: rem(21);
+    position: relative;
+  }
+
+
+.card-lower-detail__entry li::before {
+    position: absolute;
+    width: rem(10);
+    content: url(../images/common/check.svg);
+    left: rem(-0.25);
+  }
+
+.card-lower-detail__button {
+    text-align: center;
+    margin-top: rem(50);
+    @include mq("md") {
+        margin-top: rem(100);
+    }
+}

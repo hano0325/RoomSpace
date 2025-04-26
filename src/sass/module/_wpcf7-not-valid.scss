@@ -1,0 +1,6 @@
+@use "global" as *;
+
+.wpcf7-not-valid {
+    border: 1px solid  $accent-red;
+    background-color:rgba(255, 0, 0, 0.2) ;
+  }

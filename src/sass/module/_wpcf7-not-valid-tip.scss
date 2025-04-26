@@ -1,0 +1,16 @@
+@use "global" as *;
+
+
+.wpcf7-not-valid-tip {
+  display: none;
+  color: $accent-red;
+  font-size: rem(14);
+  line-height: 1.642;
+  font-family: $base-font-family;
+  font-weight: $regular;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}

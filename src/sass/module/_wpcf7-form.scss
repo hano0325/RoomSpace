@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.wpcf7-form.invalid {
+    padding-top: rem(54.4);
+    @include mq("md") {
+        padding-top: rem(12.32);
+    }
+}

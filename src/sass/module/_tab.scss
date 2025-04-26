@@ -348,3 +348,26 @@
     margin-top: rem(16);
   }
 }
+
+.tab__event-contents {
+  margin-top: rem(80);
+}
+
+.tab__event-item.is-full {
+  position: relative;
+  opacity: 0.6;
+}
+
+.tab__event-item.is-full::after {
+  content: "満員";
+  position: absolute;
+  top: rem(10);
+  left: rem(10);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: $white;
+  padding: 0.3em 0.6em;
+  font-size: 0.85em;
+  font-weight: bold;
+  border-radius: rem(4);
+  z-index: 2;
+}

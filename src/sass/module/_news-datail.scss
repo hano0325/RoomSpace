@@ -109,6 +109,8 @@
 }
 
 .news-detail__button {
+    position: relative;
+    z-index: 10;
     text-align: center;
     margin-top: rem(50);
     @include mq("md") {

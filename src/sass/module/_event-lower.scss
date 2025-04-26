@@ -1,7 +1,9 @@
 @use "global" as *;
 
-.news-lower-lower__pagenavi {
-    margin-top: rem(81);
+
+.event-lower__pagenavi,
+.event-lower__detail-pagenavi {
+    margin-top: rem(70);
     @include mq("md") {
         margin-top: rem(150);
     }

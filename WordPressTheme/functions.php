@@ -65,18 +65,17 @@ function set_campaign_posts_per_page($query) {
 // pre_get_posts フックを追加
 add_action('pre_get_posts', 'set_campaign_posts_per_page');
 
-// voiceアーカイブページの投稿数を6件に設定
-function set_voice_posts_per_page($query) {
-    // 管理画面ではなく、メインクエリが対象
+
+// eventアーカイブページの投稿数を9件に設定
+function set_event_posts_per_page($query) {
     if (!is_admin() && $query->is_main_query()) {
-        // カスタム投稿タイプ "voice" のアーカイブページ
-        if ($query->is_post_type_archive('voice')) {
-            $query->set('posts_per_page', 4); // 1ページあたり6件表示
+        if ($query->is_post_type_archive('event')) {
+            $query->set('posts_per_page', 9);
         }
     }
 }
-// pre_get_posts フックを追加
-add_action('pre_get_posts', 'set_voice_posts_per_page');
+add_action('pre_get_posts', 'set_event_posts_per_page');
+
 
 
 function custom_pagination($query) {
@@ -105,50 +104,136 @@ function theme_slug_widgets_init() {
   }
   add_action( 'widgets_init', 'theme_slug_widgets_init' );
 
-// Contact Form 7 のセレクトボックスに 'event_category' タクソノミーのタームを自動で追加する処理です
-function event_category_selectlist($tag, $unused)
+
+
+// Contact Form 7 セレクトボックスをカスタム投稿から自動生成（キャンペーン用）
+function campaign_selectlist($tag, $unused)
 {
-    // セレクトボックスの name 属性が 'event-category-select' であるか確認します
-    if ($tag['name'] != 'event-category-select') {
+    if ($tag['name'] != 'campaign-select') {
         return $tag;
     }
 
-    // URLのパラメータから、選択されたカテゴリIDを取得します（例: ?category_id=3）
-    $selected_category = isset($_GET['category_id']) ? intval($_GET['category_id']) : null;
+    $selected_campaign = isset($_GET['campaign_id']) ? intval($_GET['campaign_id']) : null;
 
-    // タクソノミー 'event_category' からターム一覧を取得します
-    $terms = get_terms(array(
-        'taxonomy'   => 'event_category', // ※お使いのタクソノミースラッグに合わせて変更してくださいね
-        'hide_empty' => false,
-        'orderby'    => 'name',
-        'order'      => 'ASC',
-    ));
+    $args = array(
+        'numberposts' => -1,
+        'post_type'   => 'campaign',
+        'orderby'     => 'ID',
+        'order'       => 'ASC'
+    );
 
-    // セレクトボックスの初期配列を準備します
+    $job_posts = get_posts($args);
+
     $tag['raw_values'] = [];
     $tag['values'] = [];
     $tag['labels'] = [];
 
-    // デフォルトの選択肢（ガイド用）を追加します
-    $tag['raw_values'][] = 'カテゴリーを選択';
+    $tag['raw_values'][] = 'キャンペーン内容を選択';
     $tag['values'][] = '';
-    $tag['labels'][] = 'カテゴリーを選択';
+    $tag['labels'][] = 'キャンペーン内容を選択';
 
-    // タームが存在する場合、それぞれの名称を選択肢として追加します
-    foreach ($terms as $term) {
-        $tag['raw_values'][] = $term->name;
-        $tag['values'][] = $term->name;
-        $tag['labels'][] = $term->name;
+    foreach ($job_posts as $job_post) {
+        $tag['raw_values'][] = $job_post->post_title;
+        $tag['values'][] = $job_post->post_title;
+        $tag['labels'][] = $job_post->post_title;
 
-        // URLで指定されたカテゴリIDが一致する場合、そのタームを初期選択状態にします
-        if ($selected_category && $term->term_id === $selected_category) {
-            $tag['default'][] = $term->name;
+        if ($selected_campaign && $job_post->ID === $selected_campaign) {
+            $tag['default'][] = $job_post->post_title;
         }
     }
 
     return $tag;
 }
-add_filter('wpcf7_form_tag', 'event_category_selectlist', 10, 2);
+add_filter('wpcf7_form_tag', 'campaign_selectlist', 10, 2);
+
+
+// Contact Form 7 セレクトボックスをカスタム投稿から自動生成（イベント用）
+function event_selectlist($tag, $unused)
+{
+    if ($tag['name'] != 'event-select') {
+        return $tag;
+    }
+
+    $selected_event = isset($_GET['event_id']) ? intval($_GET['event_id']) : null;
+
+    $args = array(
+        'numberposts' => -1,
+        'post_type'   => 'event',
+        'orderby'     => 'ID',
+        'order'       => 'ASC'
+    );
+
+    $event_posts = get_posts($args);
+
+    $tag['raw_values'] = [];
+    $tag['values'] = [];
+    $tag['labels'] = [];
+
+    $tag['raw_values'][] = 'イベント内容を選択';
+    $tag['values'][] = '';
+    $tag['labels'][] = 'イベント内容を選択';
+
+    foreach ($event_posts as $event_post) {
+        $tag['raw_values'][] = $event_post->post_title;
+        $tag['values'][] = $event_post->post_title;
+        $tag['labels'][] = $event_post->post_title;
+
+        if ($selected_event && $event_post->ID === $selected_event) {
+            $tag['default'][] = $event_post->post_title;
+        }
+    }
+
+    return $tag;
+}
+add_filter('wpcf7_form_tag', 'event_selectlist', 10, 2);
+
+
+
+// Contact Form 7 セレクトボックスの選択肢をカスタム投稿のタイトルから自動生成
+function job_selectlist($tag, $unused)
+{
+    // セレクトボックスの名前が 'campaign-select' かどうか確認
+    if ($tag['name'] != 'event-select') {
+        return $tag;
+    }
+
+    // URLパラメータからキャンペーンIDを取得
+    $selected_campaign = isset($_GET['event_id']) ? intval($_GET['event_id']) : null;
+
+    // カスタム投稿タイプ 'campaign' から投稿を取得
+    $args = array(
+        'numberposts' => -1,
+        'post_type'   => 'event',
+        'orderby'     => 'ID',
+        'order'       => 'ASC'
+    );
+
+    $job_posts = get_posts($args);
+
+    // セレクトボックスの初期値を設定
+    $tag['raw_values'] = [];
+    $tag['values'] = [];
+    $tag['labels'] = [];
+
+    $tag['raw_values'][] = 'イベント内容を選択';
+    $tag['values'][] = '';
+    $tag['labels'][] = 'イベント内容を選択';
+
+    // 投稿が存在する場合、セレクトボックスに追加
+    foreach ($job_posts as $job_post) {
+        $tag['raw_values'][] = $job_post->post_title;
+        $tag['values'][] = $job_post->post_title;
+        $tag['labels'][] = $job_post->post_title;
+
+        // 選択されたイベントが一致する場合にデフォルト値を設定
+        if ($selected_campaign && $job_post->ID === $selected_campaign) {
+            $tag['default'][] = $job_post->post_title;
+        }
+    }
+
+    return $tag;
+}
+add_filter('wpcf7_form_tag', 'job_selectlist', 10, 2);
 
 
 // Contact Form 7の自動pタグ無効
@@ -198,3 +283,23 @@ function my_enqueue_scripts(){
 	);
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
+
+function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
+    // スラッグがURLエンコードされた日本語の場合
+    if ( preg_match( '/(%[0-9a-f]{2})+/', $slug ) ) {
+        // 投稿タイトルを取得
+        $post_title = get_post_field( 'post_title', $post_ID );
+
+        // 日本語タイトルをローマ字（英語風）に変換
+        if ( function_exists( 'transliterator_transliterate' ) ) {
+            // ラテン文字に変換
+            $slug = transliterator_transliterate( 'Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $post_title );
+        } else {
+            // transliterator_transliterateが使えない場合はsanitize_titleを使用
+            $slug = sanitize_title( $post_title );
+        }
+    }
+
+    // 新しいスラッグを返す
+    return $slug;
+}

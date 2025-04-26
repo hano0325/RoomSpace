@@ -205,22 +205,23 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('load', activateOnScroll);
   window.addEventListener('scroll', activateOnScroll);
 });
-$(function () {
-  // ヘッダーの高さ分だけコンテンツを下げる
-  var height = $(".js-header").height();
-  $("main").css("margin-top", height);
-
-  // ヘッダーの高さ取得
-  var headerHeight = $(".js-header").height();
-  $('a[href^="#"]').click(function () {
-    var speed = 600;
-    var href = $(this).attr("href");
-    var target = $(href == "#" || href == "" ? "html" : href);
-    // ヘッダーの高さ分下げる
-    var position = target.offset().top - headerHeight;
-    $("body,html").animate({
-      scrollTop: position
-    }, speed, "swing");
-    return false;
+document.addEventListener("DOMContentLoaded", function () {
+  // 最初のチェックボックスに自動でチェックを入れる
+  var firstCheckbox = document.querySelector(".form__checkbox input[type='checkbox']");
+  if (firstCheckbox) {
+    firstCheckbox.checked = true;
+  }
+  // すべてのチェックボックスを取得
+  var checkboxes = document.querySelectorAll('.form__checkbox input[type="checkbox"]');
+  // 各チェックボックスにイベントリスナーを追加
+  checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+      // 現在チェックされたチェックボックス以外のチェックを外す
+      checkboxes.forEach(function (box) {
+        if (box !== checkbox) {
+          box.checked = false;
+        }
+      });
+    });
   });
 });

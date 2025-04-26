@@ -32,6 +32,9 @@
                 <?php endwhile; ?>
                 <?php endif; ?>
             </ul>
+            <div class="news-lower__pagenavi pagenavi">
+                <?php wp_pagenavi(); ?>
+            </div>
         </div>
     </section>
     <?php get_footer(); ?>

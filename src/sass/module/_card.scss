@@ -1,378 +1,96 @@
 @use "global" as *;
 
-.card {
-  background-color: $white;
-  box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  overflow: hidden;
-}
 
-.card-voice {
-  position: relative;
-  box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
-}
-
-.card__container {
-  display: block;
-  padding-top: rem(16);
-  padding-right: rem(16);
-  padding-left: rem(16);
-  padding-bottom: rem(24);
-  overflow: hidden;
-}
-
-.card-voice__container {
-  display: block;
-  padding-top: rem(16);
-  padding-right: rem(16);
-  padding-left: rem(16);
-  padding-bottom: rem(24);
-  @include mq("md") {
-    padding: rem(24);
-  }
-}
-
-.card-voice__container-text {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.card-voice__text-box {
-  display: flex;
-  flex-direction: column;
-  width: 48%;
-  @include mq("md") {
-    width: 58%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
-  }
-}
-
-.card-voice__profile {
-  font-size: rem(12);
-  font-weight: $regular;
-  font-family: $base-font-family;
-  color: $gold;
-  @include mq("md") {
-    width: 50%;
-  }
-}
-
-.card-voice__text-box-maintitle {
-  display: inline-flex;
-  width: 30%;
-  white-space: nowrap;
-  @include mq("md") {
-    margin-left: auto;
-  }
-}
-
-.card-voice__text-box-subtitle {
-  font-weight: $medium;
-  width: 100%;
-  padding-top: rem(4);
-  padding-bottom: rem(4);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  @include mq("md") {
-    font-size: rem(24);
-  }
-}
-
-.card-voice__content {
-  position: relative;
-  width: 48%;
-  margin-left: rem(13);
-  @include mq("md") {
-    margin-left: rem(16);
-    width: 37%;
-  }
-}
-
-.card-voice__content img {
-  aspect-ratio: 151 / 117;
-  display: inline-block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  @include mq("md") {
-    aspect-ratio: 180 / 140;
-  }
-}
-
-.card-voice__text-box-subtitle {
-  margin-top: rem(4);
-  padding-bottom: rem(4);
-  @include mq("md") {
-    margin-top: rem(8);
-  }
-}
-
-.card__container img {
-  transition: 0.3s;
-}
-
-.card__container:hover img {
-  transform: scale(1.1);
-}
-
-.card__content {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.card__content img {
-  aspect-ratio: 301 / 201;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.card__block {
-  margin-top: rem(18);
-}
-
-.card__block-date {
-  color: $gold;
-  font-family: $Gotu-font;
-  font-weight: $regular;
-  text-align: left;
-  font-size: rem(12);
-  line-height: 1.5;
-}
-
-.card__block-subtext,
-.card__block-title {
-  font-family: $base-font-family;
-  font-size: rem(16);
-  line-height: 1.5;
-  color: $gold;
-}
-
-.card__block-title {
-  border-bottom: 1px solid $gold;
-  font-weight: $medium;
-  display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-}
-
-.card__block-subtext {
-  margin-top: rem(16);
-  font-weight: $regular;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-}
-
-.card-voice__block-subtext {
-  font-family: $base-font-family;
-  font-size: rem(16);
-  font-weight: $regular;
-  margin-top: rem(16);
-  line-height: 1.5;
-  color: $gold;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 11;
-  @include mq("md") {
-    margin-top: rem(40);
-    -webkit-line-clamp: 8;
-  }
-}
-
-.card-article {
-  display: inline-block;
+.card a {
   transition: transform 0.3s;
-  padding: rem(16);
-  box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
-  cursor: pointer;
 }
 
-.card-article:hover {
-  transform: translateY(-5px);
+.card:hover a {
+  transform: translateY(-10px);
 }
 
-.card-article__container {
-  display: flex;
-  flex-direction: row;
-  gap: rem(24);
-}
-
-.card-article__img {
-  width: 100%;
-}
-
-.card-article__img img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 121 / 90;
-  object-fit: cover;
-}
-
-.card-article__text-box {
+.card__link {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   width: 100%;
+  background-color:  $ivory;
+  padding-top: rem(16);
+  padding-right: rem(16);
+  padding-bottom: rem(22);
+  padding-left: rem(16);
 }
 
-.card-article__date {
-  font-family: $Gotu-font;
-  font-weight: $regular;
-  color: $gold;
-  font-size: rem(12);
-  line-height: 1.5;
-}
 
-.card-article__title {
-  color: $gold;
-  font-family: $base-font-family;
-  font-weight: $medium;
-  font-size: rem(16);
-  line-height: 1.4375;
-}
 
-.card-reviews__container {
-  transition: 0.3s;
-}
-
-.card-reviews__container:hover {
-  opacity: 0.7;
-}
-
-.card-review__img {
-  width: 100%;
-  @include mq("md") {
-    width: rem(294);
-  }
-}
-
-.card-reviews__img img {
+.card__link img {
   width: 100%;
   height: auto;
-  aspect-ratio: 294 / 218;
+  aspect-ratio: 251 / 171;
   object-fit: cover;
 }
 
-.card-reviews__profile {
-  font-family: $base-font-family;
-  font-weight: $regular;
-  font-size: rem(12);
-  line-height: 1.5;
-  color: $gold;
-  margin-top: rem(16);
+.card__box {
+  margin-top: rem(9);
+  display: flex;
+  flex-direction: column;
 }
 
-.card-reviews__text {
+.card__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  max-width: rem(140);
+  width: 100%;
+  border: 1px solid $gold-muted;
+  padding-top: rem(5);
+  padding-right: rem(5);
+  padding-bottom: rem(5);
+  padding-left: rem(5);
+
+}
+
+
+.card__label-text {
+    font-weight: $regular;
+    font-family: $base-font-family;
+    color: $gold-muted;
+    font-size: rem(12);
+    line-height: 1.5;
+}
+
+
+.card__text-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(11);
+  border-bottom: 1px solid $gold;
+  padding-bottom: rem(7);
+}
+
+.card__date,
+.card__text {
+  font-weight: $regular;
   font-family: $base-font-family;
-  font-weight: $medium;
-  font-size: rem(24);
-  line-height: 1.4583;
-  color: $gold;
-  margin-top: rem(8);
+  color: $deep-brown;
+  font-size: rem(12);
+  line-height: 1.5;
+}
+
+.card__text {
+  margin-top: rem(7);
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   overflow: hidden;
 }
 
-.card-lower-detail__title {
-  color: $gold;
-  font-family: $base-font-family;
-  font-weight: $medium;
-  font-size: rem(24);
-  line-height: 1.4584;
-  padding-bottom: rem(4);
-  border-bottom: 1px solid $gold;
-  margin-top: rem(8);
-  @include mq("md") {
-    font-size: rem(32);
-    line-height: 1.4375;
-    padding-bottom: 0;
-  }
-}
-
-.card-lower-detail__img {
-  width: 100%;
-}
-
-.card-lower-detail__img img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 345 / 231;
-  margin-top: rem(24);
-  object-fit: cover;
-  @include mq("md") {
-    margin-top: rem(40);
-    aspect-ratio: 700 / 468;
-  }
-}
-
-.card-lower-detail__entry p {
-  margin-top: rem(24);
-  font-size: rem(16);
-  line-height: 1.5;
-  font-family: $base-font-family;
-  font-weight: $regular;
-  color: $gold;
-  @include mq("md") {
-    margin-top: rem(40);
-  }
-}
-
-.card-lower-detail__entry {
-  margin-top: rem(24);
-  @include mq("md") {
-      margin-top: rem(40);
-  }
-}
-
-.card-lower-detail__entry ul {
-  margin-top: rem(24);
-  @include mq("md") {
-    margin-top: rem(40);
-  }
-}
-
-.card-lower-detail__entry li {
-  padding-left: rem(21);
-  position: relative;
-}
-
-.card-lower-detail__entry li::before {
-  position: absolute;
-  content: url(../images/common/hitode-blue.svg);
-  top: rem(2);
-  left: rem(-0.25);
-}
-
-.card-lower-detail__date {
-  font-size: rem(14);
-  line-height: 1.826;
-  color: $gold;
-  font-weight: $regular;
-  font-family: $base-font-family;
-}
-
-.card-lower-detail__contents {
-  li {
-    position: absolute;
-    content: url(../images/common/hitode-blue.svg);
-    top: rem(2);
-    left: rem(-0.25);
-  }
-  li::before {
-    position: absolute;
-    content: url(../images/common/hitode-blue.svg);
-    top: rem(2);
-    left: rem(-0.25);
+.card__button {
+  margin-top: rem(50);
+  text-align: center;
+  @include mq("md"){
+    margin-top: rem(60);
   }
 }
