@@ -46,7 +46,8 @@ $terms = esc_url(home_url('/terms/'));
                     </a>
                 </li>
                 <li class="header__nav-item">
-                    <a href="<?php echo get_anchor_link('service'); ?>" class="header__nav-link">
+                    <a href="<?php echo is_front_page() ? '#service' : esc_url(home_url('/#service')); ?>"
+                        class="header__nav-link">
                         <span>service</span>サービス
                     </a>
                 </li>
@@ -61,12 +62,14 @@ $terms = esc_url(home_url('/terms/'));
                     </a>
                 </li>
                 <li class="header__nav-item">
-                    <a href="<?php echo get_anchor_link('price'); ?>" class="header__nav-link">
-                        <span>price</span>料金コース
+                    <a href="<?php echo is_front_page() ? '#price' : esc_url( home_url( '/#price' ) ); ?>"
+                        class="header__nav-link">
+                        <span>price</span>料金一覧
                     </a>
                 </li>
                 <li class="header__nav-item">
-                    <a href="<?php echo get_anchor_link('faq'); ?>" class="header__nav-link header__nav-link--large">
+                    <a href="<?php echo is_front_page() ? '#faq' : esc_url( home_url( '/#faq' ) ); ?>"
+                        class="header__nav-link header__nav-link--large">
                         <span>faq</span>質問
                     </a>
                 </li>
@@ -115,10 +118,15 @@ $terms = esc_url(home_url('/terms/'));
                                 </ul>
                                 <ul class="menu__nav-item">
                                     <li class="menu__nav-item-main">
-                                        <a href="<?php echo get_anchor_link('service'); ?>">サービス</a>
+                                        <a href="<?php echo esc_url( home_url( '/#service' ) ); ?>">サービス</a>
                                     </li>
                                     <li class="menu__nav-item-main">
                                         <a href="<?php echo $news; ?>">お知らせ</a>
+                                    </li>
+                                    <li class="menu__nav-item-main">
+                                        <a
+                                            href="<?php echo is_front_page() ? '#price' : esc_url( home_url( '/#price' ) ); ?>">料金一覧
+                                        </a>
                                     </li>
                                 </ul>
                             </div>

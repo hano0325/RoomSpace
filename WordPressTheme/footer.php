@@ -1,16 +1,12 @@
 <?php
 $home = esc_url(home_url('/'));
-$campaign_url = esc_url(home_url('/campaign/'));
+$campaign = esc_url(home_url('/campaign/'));
 $about = esc_url(home_url('/about/'));
-$information = esc_url(home_url('/information/'));
-$blog = esc_url(home_url('/blog/'));
-$voice_url = esc_url(home_url('/voice/'));
-$price = esc_url(home_url('/price/'));
-$faq = esc_url(home_url('/faq/'));
+$news = esc_url(home_url('/news/'));
+$event = esc_url(home_url('/event/'));
 $contact = esc_url(home_url('/contact/'));
 $privacy = esc_url(home_url('/privacy/'));
-$service = esc_url(home_url('/service/'));
-$site = esc_url(home_url('/site/'));
+$terms = esc_url(home_url('/terms/'));
 ?>
 
 <?php if (!is_page(array('contact', 'thanks')) && !is_404()): ?>
@@ -71,10 +67,10 @@ $site = esc_url(home_url('/site/'));
                             <a href="<?php echo $campaign_url; ?>">キャンペーン</a>
                         </li>
                         <?php
-$campaign_terms = get_terms('campaign_category');
-if (!empty($campaign_terms) && !is_wp_error($campaign_terms)) :
-foreach ($campaign_terms as $term) :
-?>
+                            $campaign_terms = get_terms('campaign_category');
+                            if (!empty($campaign_terms) && !is_wp_error($campaign_terms)) :
+                            foreach ($campaign_terms as $term) :
+                            ?>
                         <li class="menu__nav-item-sub">
                             <a href="<?php echo esc_url(get_term_link($term)); ?>">
                                 <?php echo esc_html($term->name); ?>
@@ -90,7 +86,7 @@ foreach ($campaign_terms as $term) :
                             <a href="<?php echo get_anchor_link('service'); ?>">サービス</a>
                         </li>
                         <li class="menu__nav-item-main">
-                            <a href="<?php echo $information; ?>">お知らせ</a>
+                            <a href="<?php echo $news; ?>">お知らせ</a>
                         </li>
                     </ul>
                 </div>
@@ -110,19 +106,22 @@ foreach ($campaign_terms as $term) :
                             </a>
                         </li>
                         <?php endforeach; endif; ?>
+                        <li class="menu__nav-item-main">
+                            <a href="<?php echo is_front_page() ? '#price' : esc_url( home_url( '/#price' ) ); ?>">料金一覧
+                            </a>
+                        </li>
                     </ul>
                     <ul class="menu__nav-item">
                         <li class="menu__nav-item-main">
-                            <a href="<?php echo get_anchor_link('faq'); ?>">よくある質問</a>
+                            <a href="<?php echo is_front_page() ? '#faq' : esc_url( home_url( '/#faq' ) ); ?>">
+                                よくある質問
+                            </a>
                         </li>
                         <li class="menu__nav-item-main">
                             <a href="<?php echo $privacy; ?>">プライバシー<br class="u-mobile" />ポリシー</a>
                         </li>
                         <li class="menu__nav-item-main">
-                            <a href="<?php echo $service; ?>">利用規約</a>
-                        </li>
-                        <li class="menu__nav-item-main">
-                            <a href="<?php echo $site; ?>">サイトマップ</a>
+                            <a href="<?php echo $terms; ?>">利用規約</a>
                         </li>
                         <li class="menu__nav-item-main">
                             <a href="<?php echo $contact; ?>">お問い合わせ</a>

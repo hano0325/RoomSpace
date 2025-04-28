@@ -265,15 +265,6 @@ function my_enqueue_scripts(){
 		true
 	);
 
-	//実際に動かすための設定ファイル
-	wp_enqueue_script(
-		"swiper-conf",
-		get_theme_file_uri("js/swiper-conf.js"),
-		array("swiper-js"),
-		false,
-		true
-	);
-
 	//style.cssでlightgallery.cssを上書きする場合は、第三引数に指定
 	wp_enqueue_style(
 		"style",

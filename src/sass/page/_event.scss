@@ -13,3 +13,15 @@
     padding-left: rem(25);
   }
 }
+
+.event__contents {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+}
+
+.event__button {
+  margin-top: rem(60);
+  text-align: center;
+}

@@ -2,7 +2,7 @@
 <div id="mv" class="mv-lower">
     <div class="mv-lower__inner">
         <div class="mv-lower__title">
-            <h1 class="mv-lower__title-main">Contact</h1>
+            <h1 class="mv-lower__title-main"><span>Contact</span></h1>
         </div>
         <div class="mv-lower__img">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/common/contact-mv.jpg"
