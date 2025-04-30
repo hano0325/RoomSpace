@@ -40,6 +40,10 @@
     <main>
         <section class="campaign campaign-layout">
             <div class="campaign__inner inner">
+                <div class="campaign__button-container">
+                    <div class="campaign__button-next swiper-button-next"></div>
+                    <div class="campaign__button-prev swiper-button-prev"></div>
+                </div>
                 <div class="campaign__title title">
                     <p class="title__main">Campaign</p>
                     <h2 class="title__sub">キャンペーン</h2>
@@ -116,10 +120,6 @@
                         </div>
                     </a>
                 </div>
-            </div>
-            <div class="campaign__button-container">
-                <div class="campaign__button-next swiper-button-next"></div>
-                <div class="campaign__button-prev swiper-button-prev"></div>
             </div>
         </section>
         <section class="about about-layout">

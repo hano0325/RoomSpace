@@ -102,7 +102,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 // キャンペーンセクション用のSwiper
 var campaignSwiper = new Swiper('.js-campaign-swiper', {
   loop: true, // 無限ループ
-  slidesPerView: 'auto', // 一度に表示するスライド数
+  slidesPerView: '1.3', // 一度に表示するスライド数
   slidesPerGroup: 1, // 一度に移動するスライド数
   initialSlide: 1, // 初期表示スライド
   spaceBetween: 24, // スライド間のスペース
@@ -120,12 +120,18 @@ var campaignSwiper = new Swiper('.js-campaign-swiper', {
   },
   breakpoints: {
 
-    // タブレットおよびPC用（768px以上）
     768: {
-      slidesPerView: 'auto', // 一度に表示するスライド数
+      slidesPerView: '3', // 一度に表示するスライド数
       slidesPerGroup: 1, // 一度に移動するスライド数
       initialSlide: 1, // 初期表示スライド
       spaceBetween: 40, // スライド間のスペース
+    },
+    // タブレットおよびPC用（768px以上）
+    1440: {
+      slidesPerView: '3.8', // 一度に表示するスライド数
+      slidesPerGroup: 1, // 一度に移動するスライド数
+      initialSlide: 1, // 初期表示スライド
+      spaceBetween: 80, // スライド間のスペース
     }
   }
 });

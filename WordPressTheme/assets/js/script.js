@@ -11,45 +11,40 @@ jQuery(function ($) {
   });
   // ページ内スクロール
   $(function () {
-    var headerHeight = $(".header").outerHeight(); // ヘッダーの高さを取得
-  
+    // ヘッダーの高さ取得
+    var headerHeight = $(".header").outerHeight();
     if (headerHeight) {
-      console.log("Header height: " + headerHeight + "px");
+      console.log("Header height: ".concat(headerHeight, "px"));
     } else {
       console.log("Header element does not exist or its height could not be retrieved.");
     }
-    // ページロード時、ハッシュがあればスクロール
-    if (location.hash) {
-      smoothScroll(location.hash, headerHeight);
+    var hash = location.hash;
+    if (hash) {
+      $("html, body").stop().scrollTop(0);
+      scroll(hash, headerHeight);
     }
-    // aタグクリック時
-    $('a[href^="#"]').on('click', function (e) {
-      var href = $(this).attr('href');
-      var id = href.slice(1); // #を除いたid名を取得
-      // idが存在するかチェック
-      if (id && $("#" + id).length) {
-        e.preventDefault(); // 本来のリンク動作を止める
-        // ハンバーガーメニューを閉じる処理
-        $(".js-hamburger").removeClass("is-active");
-        $(".js-drawer").removeClass("is-active").css("display", "none");
-        smoothScroll(href, headerHeight); // スクロール実行
-      }
+    $('a[href*="#"]').click(function () {
+      // ヘッダーの高さ分下げる
+      $(".js-hamburger").removeClass("is-active"); // ハンバーガーボタンの状態をリセット
+      $(".js-drawer").removeClass("is-active"); // メニューを非表示状態にする
+      // メニューコンテナを非表示に設定
+      $(".js-drawer").css("display", "none");
+      var href = $(this).attr("href");
+      scroll(href, headerHeight);
+      return false;
     });
   });
-  // スクロール関数
-  function smoothScroll(href, headerHeight) {
+  function scroll(href, headerHeight) {
     var speed = 600;
-    var id = href.split("#")[1];
-    if (!id) return;
-    var target = $("#" + id);
-
-    if (!target.length) return;
-    $("html, body").stop().animate({
-      scrollTop: target.offset().top - headerHeight
+    href = "#" + href.split("#")[1];
+    console.log(href);
+    var target = $(href == "#" || href == "" ? "html" : href);
+    var position = target.offset().top - headerHeight;
+    $("body.html").animate({
+      crollTop: position
     }, speed, "swing");
   }
-  });
-  
+});
 // resizeイベント
 $(window).resize(function () {
   if (window.matchMedia("(min-width: 768px)").matches) {
@@ -106,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 var campaignSwiper = new Swiper('.js-campaign-swiper', {
   loop: true,
   // 無限ループ
-  slidesPerView: 'auto',
+  slidesPerView: '1.3',
   // 一度に表示するスライド数
   slidesPerGroup: 1,
   // 一度に移動するスライド数
@@ -133,15 +128,25 @@ var campaignSwiper = new Swiper('.js-campaign-swiper', {
   },
 
   breakpoints: {
-    // タブレットおよびPC用（768px以上）
     768: {
-      slidesPerView: 'auto',
+      slidesPerView: '3',
       // 一度に表示するスライド数
       slidesPerGroup: 1,
       // 一度に移動するスライド数
       initialSlide: 1,
       // 初期表示スライド
       spaceBetween: 40 // スライド間のスペース
+    },
+
+    // タブレットおよびPC用（768px以上）
+    1440: {
+      slidesPerView: '3.8',
+      // 一度に表示するスライド数
+      slidesPerGroup: 1,
+      // 一度に移動するスライド数
+      initialSlide: 1,
+      // 初期表示スライド
+      spaceBetween: 80 // スライド間のスペース
     }
   }
 });

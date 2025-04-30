@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 var campaignSwiper = new Swiper('.js-campaign-swiper', {
   loop: true,
   // 無限ループ
-  slidesPerView: 'auto',
+  slidesPerView: '1.3',
   // 一度に表示するスライド数
   slidesPerGroup: 1,
   // 一度に移動するスライド数
@@ -128,15 +128,25 @@ var campaignSwiper = new Swiper('.js-campaign-swiper', {
   },
 
   breakpoints: {
-    // タブレットおよびPC用（768px以上）
     768: {
-      slidesPerView: 'auto',
+      slidesPerView: '3',
       // 一度に表示するスライド数
       slidesPerGroup: 1,
       // 一度に移動するスライド数
       initialSlide: 1,
       // 初期表示スライド
       spaceBetween: 40 // スライド間のスペース
+    },
+
+    // タブレットおよびPC用（768px以上）
+    1440: {
+      slidesPerView: '3.8',
+      // 一度に表示するスライド数
+      slidesPerGroup: 1,
+      // 一度に移動するスライド数
+      initialSlide: 1,
+      // 初期表示スライド
+      spaceBetween: 80 // スライド間のスペース
     }
   }
 });

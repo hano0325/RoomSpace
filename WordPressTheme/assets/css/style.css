@@ -298,7 +298,6 @@ a {
 	flex-direction: column;
 	height: auto;
 	position: relative;
-	width: 18.5rem;
 	z-index: 10;
 }
 
@@ -3836,10 +3835,6 @@ html {
 	padding-top: 1.5rem;
 }
 
-.campaign__slide {
-	width: 20.8125rem;
-}
-
 .campaign__slide::before {
 	left: 0.9375rem;
 }
@@ -3850,9 +3845,9 @@ html {
 
 .campaign__button-container {
 	display: block;
-	position: relative;
-	right: -65%;
-	top: -44.375rem;
+	position: absolute;
+	right: 11%;
+	top: 4%;
 	width: 15rem;
 }
 
